@@ -23,12 +23,28 @@
             li{
                 a{
                     font-family: $police_titre;
-                    color:white;
+                    color: #E1E1E1;
                     text-transform:uppercase;
                     letter-spacing: 2px;
                     text-decoration: none;
                 }
             } 
+        }
+    }
+    .site__logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        color: #E1E1E1;
+        i{
+            margin-left: 10%;
+            color: #E1E1E1;
+            font-size: 2em;
+            &:hover{
+                transition: all .3s ease-in-out;
+                color: white;
+            }
         }
     }
 }
