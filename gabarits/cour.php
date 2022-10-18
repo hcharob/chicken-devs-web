@@ -12,15 +12,18 @@
     $descCours = get_the_content();
     ?>
 
-    <div class="BoiteHexgone">
-        <h3 class="cours__titre">  
+<div class="conteneur">
+        <div class="contour">
+            <div class="forme">
+            <h3 class="cours__titre">  
             <a href="<?php echo get_permalink(); ?>">
                 <?= $titreFiltreCours; ?>
             </a>
-        </h3>
-        <div class="cours__nbre-heure"><?= $nbHeures; ?></div>
+
         <p class="cours__sigle"><?= $sigleCours; ?> </p>
         <p class="cours__desc"><?=wp_trim_words($descCours, 12, " <button class='cours__desc__bouton'>...</button>"); ?></p>
         <?php get_permalink(); ?>
+            </div>
+        </div>
     </div>
 </article>
