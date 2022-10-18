@@ -15,11 +15,16 @@ Text Domain: cidw-5w5
 VARIABLES
 --------------------------------------------------------- */
 
+@import "variables/couleurs";
+@import "variables/formes";
+@import "variables/polices";
 
 /* ---------------------------------------------------------
 INITIALISATION
 --------------------------------------------------------- */
 
+@import "initialisation/normalize";
+@import "initialisation/box-sizing";
 
 /* ---------------------------------------------------------
 ÉLÉMENTS
@@ -28,6 +33,8 @@ INITIALISATION
 /* ---------------------------------------------------------
 COMPOSANTES
 --------------------------------------------------------- */
+
+@import "composantes/footer";
 
 /* ---------------------------------------------------------
 ANIMATION
