@@ -22,6 +22,8 @@ VARIABLES
 INITIALISATION
 --------------------------------------------------------- */
 
+@import "initialisation/normalize";
+@import "initialisation/box-sizing";
 
 /* ---------------------------------------------------------
 ÉLÉMENTS
@@ -31,6 +33,8 @@ INITIALISATION
 COMPOSANTES
 --------------------------------------------------------- */
 @import "composantes/header";
+@import "composantes/footer";
+
 /* ---------------------------------------------------------
 ANIMATION
 --------------------------------------------------------- */
