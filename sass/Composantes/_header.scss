@@ -1,8 +1,14 @@
 .site__header {
+    width: 100%;
+
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: black;
+
+    background-color: rgba(34, 36, 38, 0.35);
+
+    position: fixed;
+    z-index: 1;
     section{
         width: 50%;
     }  
@@ -20,8 +26,13 @@
                     color:white;
                     text-transform:uppercase;
                     letter-spacing: 2px;
+                    text-decoration: none;
                 }
             } 
         }
     }
-  }
+}
+.site__header.nav-active {
+    background-color: rgba(41, 45, 50, 1);
+    transition: background-color 200ms linear;
+}

@@ -7,6 +7,14 @@ function cidw_5w5_enqueue(){
         get_template_directory_uri() . '/style.css',
         array(), filemtime(get_template_directory() . '/style.css'),
         false);
+
+    wp_register_script('cidw-5w5-nav-opacity',
+        get_template_directory_uri() . '/javascript/nav-opacity.js',
+        array(),
+        filemtime(get_template_directory() . '/javascript/nav-opacity.js'),
+        true); // true pour intégrer le js en bas du document
+
+    wp_enqueue_script('cidw-5w5-nav-opacity');
 }
 
 add_action("wp_enqueue_scripts", "cidw_5w5_enqueue");
