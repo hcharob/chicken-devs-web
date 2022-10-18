@@ -9,12 +9,16 @@ Requires PHP: 7.0
 License: GNU General Public License v2 or later
 Text Domain: cidw-5w5
 */
-/** {
-    outline: 1px solid #0900ff !important;
+* {
+  outline: 1px solid #0900ff !important;
 }
+
 /* ---------------------------------------------------------
 VARIABLES
 --------------------------------------------------------- */
+/* ---------------- Couleurs principales */
+/* ---------------- Effets visuels */
+/* ---------------- Hexagone */
 /* ---------------------------------------------------------
 INITIALISATION
 --------------------------------------------------------- */
@@ -24,6 +28,32 @@ INITIALISATION
 /* ---------------------------------------------------------
 COMPOSANTES
 --------------------------------------------------------- */
+.site__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: black;
+}
+
+.site__header section {
+  width: 50%;
+}
+
+.site__header .site__nav #menu-principal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.site__header .site__nav #menu-principal li a {
+  font-family: bebas-neue-pro, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 /* ---------------------------------------------------------
 ANIMATION
 --------------------------------------------------------- */

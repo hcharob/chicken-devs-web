@@ -1,0 +1,27 @@
+.site__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    section{
+        width: 50%;
+    }  
+    .site__nav {
+        #menu-principal{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+
+            list-style: none;
+            li{
+                a{
+                    font-family: $police_titre;
+                    color:white;
+                    text-transform:uppercase;
+                    letter-spacing: 2px;
+                }
+            } 
+        }
+    }
+  }

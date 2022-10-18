@@ -17,13 +17,10 @@
 
 
     <header class="site__header">
-        <section class="site__header__titre">
+        <section class="site__logo">
             <?php the_custom_logo(); ?>
-            <h1 class="header__titre">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">    
-                    <?php bloginfo('name'); ?></h1>
-                </a>
-            <h2 class="header__description"></h2>
         </section>
-
+        <section class="site__nav">
+            <?php get_template_part('composents/template','mainNav');?>
+        </section>
     </header>
