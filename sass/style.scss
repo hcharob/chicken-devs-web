@@ -17,6 +17,7 @@ VARIABLES
 @import "variables/couleurs";
 @import "variables/formes";
 @import "variables/polices";
+@import "variables/structure";
 
 /* ---------------------------------------------------------
 INITIALISATION
@@ -38,7 +39,7 @@ COMPOSANTES
 /* ---------------------------------------------------------
 ANIMATION
 --------------------------------------------------------- */
-
+@import "animation/burger";
 /* ---------------------------------------------------------
 LAYOUT
 --------------------------------------------------------- */
