@@ -1,19 +1,20 @@
 <footer class="site__footer">
     <div class="site__footer__conteneur">
-    <h2 class="footer__titre">Collège de Maisonneuve</h2>
+        <h2 class="footer__titre">Collège de Maisonneuve</h2>
 
-        <div class="site__footer__colonne">
+        <!-- Informations du collège -->
+        <div class="site__footer__contact">
             <h3>Rejoignez-nous</h3>
             <section class="footer__adresse">3800, rue Sherbrooke Est</section>
             <section class="footer__codePostal">Montréal (Québec), H1X 2A2</section>
             <section class="footer__telephone">514 254-7131</section>
         </div>
-        <hr>
 
-        <div class="site__footer__contact">
+        <!-- Réseaux sociaux -->
+        <div class="site__footer__social">
             <h3>Restons en contact</h3>
             <section class="footer__icones">
-                
+                <!-- Boîte pour les icônes -->
                 <div class="boite__carre">
                     <div class="icones">
                         <a href="https://fr-ca.facebook.com/maisonneuvetim/"> <svg width="24" height="24"
@@ -23,7 +24,8 @@
                                 <path
                                     d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z">
                                 </path>
-                            </svg> </a>
+                            </svg> 
+                        </a>
                     </div>
                 </div>
 
@@ -44,18 +46,35 @@
             </section>
         </div>
 
-        <hr>
+        <!-- Crédits du projet -->
         <div class="site__footer__credit">
-            <!-- <section class="footer__menu"></section> -->
             <section class="footer__description">5w5 - Dévelopement web en équipe</section>
             <section class="footer__copyright">&copy; Collège de Maisonneuve - Tous droits réservés</section>
             <section class="footer__auteur">Équipe#2 - Chicken Devs</section>
         </div>
     </div>
 
+    <!-- <div id="hexGrid">
+        <div class="hexCrop">
+            <div class="hexGrid">
+                <div class="hex">1</div>
+                <div class="hex">2</div>
+                <div class="hex">3</div>
+                <div class="hex">4</div>
+                <div class="hex">5</div>
+                <div class="hex">6</div>
+                <div class="hex">7</div>
+                <div class="hex">
+                    <div class="contour">
+                        <div class="forme">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
 </footer>
 <?php wp_footer(); ?>
 </body>
-
 </html>
