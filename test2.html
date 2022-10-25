@@ -1,0 +1,68 @@
+<style>
+    /* les quatres choses à modifier sont : height, clip-path, margin-bottom, --f*/
+
+    .main {
+        display: flex; 
+
+        --s: 20vw;  /* size */
+        --r: 1.15; /* height ratio */
+        --n: 4;
+
+        /* clip-path parameter */
+        --hc: calc(var(--s) * 0.5); 
+        --vc: calc(var(--s) * 0.26);
+        --m: 3px; /* vertical margin */
+
+        --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2); /* horizontal margin */
+        --f: calc(2.2*var(--s));
+        
+    }
+  
+    .container { /*le conteneur des hexagones*/
+        font-size: 0; /* enleve un bout blanc */
+        background-color: blue;
+        
+        width: calc((var(--s) * 3) + (var(--s)/2 + var(--mh)));
+    }
+    
+    .container div { /* les hexagones */
+        width: var(--s);
+        margin: var(--m) var(--mh);
+        height: calc(var(--s)*var(--r)); /* calcul effectuer pour trouver la forme désirée 
+                                            dans ce cas se serait le width * 1.1547 */
+        display: inline-block;
+        font-size: initial; /* we reset the font-size if we want to add some content */
+        clip-path: polygon(
+            var(--hc) 0, calc(100% - var(--hc)) 0, /* 2 points at the top */
+            100% var(--vc),100% calc(100% - var(--vc)), /* 2 points at the right */
+            calc(100% - var(--hc)) 100%, var(--hc) 100%, /* 2 points at the bottom */
+            0 calc(100% - var(--vc)),0 var(--vc) /* 2 points at the left */
+        );
+        margin-bottom: calc(var(--m) - var(--vc)); /* 0.2886 = le height divisé par 4, nous voulons la marge - le quart du height donc var(--s) * (1.1547 / 4) */
+        background:red;
+    }
+
+    .container div:nth-child(odd) { /*donne une couleur différentes à chaque hexagones sur 2*/
+        background:green;
+    }
+
+    .container::before {
+        content: "";
+        width: calc(var(--s)/2 + var(--mh));
+        float: left;
+        height: 100%;
+        shape-outside: repeating-linear-gradient(#000 0 10px,#0000 0 var(--f));
+    }
+    
+</style>
+
+<div class="main">
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      
+      <!--etc. -->
+    </div>
+  </div>
