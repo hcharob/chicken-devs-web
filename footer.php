@@ -54,26 +54,6 @@
         </div>
     </div>
 
-    <!-- <div id="hexGrid">
-        <div class="hexCrop">
-            <div class="hexGrid">
-                <div class="hex">1</div>
-                <div class="hex">2</div>
-                <div class="hex">3</div>
-                <div class="hex">4</div>
-                <div class="hex">5</div>
-                <div class="hex">6</div>
-                <div class="hex">7</div>
-                <div class="hex">
-                    <div class="contour">
-                        <div class="forme">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 </footer>
 <?php wp_footer(); ?>
 </body>
