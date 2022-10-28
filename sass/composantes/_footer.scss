@@ -3,6 +3,8 @@
     background-color: $couleur_noirFonce;
     color: $couleur_blanc;
     width: 100vw;
+    position: fixed;
+    bottom: 0;
 
     // ----------------------------- Style du conteneur avec une grille
     .site__footer__conteneur {
@@ -88,19 +90,16 @@
             grid-template-areas:
                 'titre contact social copyright';
 
-            // Titre
-            h2 {
-                text-align: left;
-            }
-
             //Sous-titre
             h3 {
                 padding-bottom: 1rem;
                 margin: 0;
             }
 
+            //Titre
             .footer__titre {
-                font-size: 1.5rem;
+                text-align: left;
+                font-size: 1.8rem;
                 justify-content: flex-start;
                 padding: 0;
                 margin: 0;
@@ -135,31 +134,4 @@
         }
     }
 
-    // ----------------------------- Style du hexagone
-    // .contour {
-    //     position: relative;
-    //     width: 100%;
-    //     height: 100%;
-    //     background: #FF207A;
-    //     background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
-    //     clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
-    // }
-
-    // .forme {
-    //     position: absolute;
-    //     top: 3px;
-    //     left: 3px;
-    //     right: 3px;
-    //     bottom: 3px;
-    //     background: #32353B;
-    //     clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
-    // }
-
-    // .forme:hover {
-    //     position: absolute;
-    //     top: 6px;
-    //     left: 6px;
-    //     right: 6px;
-    //     bottom: 6px;
-    // }
 }
