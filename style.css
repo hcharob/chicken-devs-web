@@ -350,12 +350,19 @@ html {
 COMPOSANTES
 --------------------------------------------------------- */
 a {
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 .formation {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formation__conteneur {
+  display: flex;
   justify-content: center;
+  margin: auto;
   --s: 15vw;
   /* size */
   --r: 1.15;
@@ -365,10 +372,12 @@ a {
   --vc: calc(var(--s) * 0.26);
   --m: 3px;
   /* vertical margin */
-  --n: 5;
   --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2);
   /* horizontal margin */
   --f: calc(2.2*var(--s));
+  background-color: #32353B;
+  width: 50vw;
+  padding-bottom: 5rem;
 }
 
 .formation__liste {
@@ -392,7 +401,17 @@ a {
   clip-path: polygon(var(--hc) 0, calc(100% - var(--hc)) 0, 100% var(--vc), 100% calc(100% - var(--vc)), calc(100% - var(--hc)) 100%, var(--hc) 100%, 0 calc(100% - var(--vc)), 0 var(--vc));
   margin-bottom: calc(var(--m) - var(--vc));
   /* 0.2886 = le height divisé par 4, nous voulons la marge - le quart du height donc var(--s) * (1.1547 / 4) */
-  background: #32353B;
+  background: pink;
+  position: relative;
+}
+
+.formation__liste article .conteneurCours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
 }
 
 .formation__liste::before {
@@ -401,6 +420,16 @@ a {
   float: left;
   height: 100%;
   shape-outside: repeating-linear-gradient(#000 0 10px, #0000 0 var(--f));
+}
+
+.listeSession ul {
+  display: flex;
+  padding: 0;
+}
+
+.listeSession ul li {
+  list-style-type: none;
+  margin: 0 1rem;
 }
 
 /* ---------------------------------------------------------

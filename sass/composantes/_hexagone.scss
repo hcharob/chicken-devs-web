@@ -2,26 +2,35 @@ a{
     color: $couleur_blanc;
 }
 
+.formation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.formation {
+.formation__conteneur {
     display: flex; 
     justify-content: center;
+    margin: auto;
     --s: 15vw;  /* size */
     --r: 1.15; /* height ratio */
     /* clip-path parameter */
     --hc: calc(var(--s) * 0.5); 
     --vc: calc(var(--s) * 0.26);
     --m: 3px; /* vertical margin */
-    --n: 5;
     --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2); /* horizontal margin */
     --f: calc(2.2*var(--s));
-    
+    background-color: $couleur_noir;
+    width: 50vw;
+    padding-bottom: 5rem;
 }
 
 .formation__liste { /*le conteneur des hexagones*/
     font-size: 0; /* enleve un bout blanc */
     // width: calc((var(--s) * 3) + (var(--s)/2 + var(--mh)));
     width:calc(((var(--n) / 2) + 0.5) * var(--s) + ((var(--n) + 1) * var(--mh)));
+    
+    
 }
 
 .formation__liste article { /* les hexagones */
@@ -39,12 +48,18 @@ a{
         0 calc(100% - var(--vc)),0 var(--vc) /* 2 points at the left */
     );
     margin-bottom: calc(var(--m) - var(--vc)); /* 0.2886 = le height divisé par 4, nous voulons la marge - le quart du height donc var(--s) * (1.1547 / 4) */
-    ;
-    background: #32353B;
-    
+    background: pink;
+    position: relative;
+
+    .conteneurCours{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+    }   
 }
-
-
 
 .formation__liste::before {
     content: "";
@@ -54,37 +69,6 @@ a{
     shape-outside: repeating-linear-gradient(#000 0 10px,#0000 0 var(--f));
 }
 
-// .conteneurCours {
-//     filter: drop-shadow(rgba(34, 36, 38, 0.3) 12px 12px 30px);
-// }
-
-// .contour {
-//     overflow: hidden;
-//     position: relative;
-//     width: 300px;
-//     height: 300px;
-//     background: #FF207A;
-//     background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
-//     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-// }
-
-// .forme {
-//     position: absolute;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     top: 5px;
-//     left: 5px;
-//     right: 5px;
-//     bottom: 5px;
-//     background: #32353B;
-//     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-
-//     & > *{
-//         color: white;
-//         align-self: center;
-//     }
-// }
 
 
 
