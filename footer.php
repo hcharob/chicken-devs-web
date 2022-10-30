@@ -48,7 +48,7 @@
 
         <!-- Crédits du projet -->
         <div class="site__footer__credit">
-            <section class="footer__description">5w5 - Dévelopement web en équipe</section>
+            <section class="footer__description">5w5 - Développement web en équipe</section>
             <section class="footer__copyright">&copy; Collège de Maisonneuve - Tous droits réservés</section>
             <section class="footer__auteur">Équipe#2 - Chicken Devs</section>
         </div>
