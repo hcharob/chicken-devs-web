@@ -352,6 +352,8 @@ COMPOSANTES
   background-color: #222426;
   color: #F2F2F2;
   width: 100vw;
+  position: fixed;
+  bottom: 0;
 }
 
 .site__footer .site__footer__conteneur {
