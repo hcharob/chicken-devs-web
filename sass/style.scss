@@ -8,7 +8,11 @@ Requires PHP: 7.0
 License: GNU General Public License v2 or later
 Text Domain: cidw-5w5
 */
-* {
+
+/* ---------------------------------------------------------
+DEVELOPPEMENT ACTIVABLE -- delete / pour apliquer une bordure a tous
+--------------------------------------------------------- */
+/* {
     outline: 1px solid #0900ff !important;
 }
 /* ---------------------------------------------------------
@@ -34,7 +38,12 @@ INITIALISATION
 COMPOSANTES
 --------------------------------------------------------- */
 @import "composantes/header";
+@import "composantes/background";
 @import "composantes/footer";
+
+@import "composantes/pages/projets";
+
+@import "composantes/buttons/button-long";
 
 /* ---------------------------------------------------------
 ANIMATION

@@ -22,6 +22,6 @@
             <i class="fa fa-home" aria-hidden="true"></i>
         </section>
         <section class="site__nav">
-            <?php get_template_part('composents/template','mainNav');?>
+            <?php get_template_part('composantes/template','mainNav');?>
         </section>
     </header>
