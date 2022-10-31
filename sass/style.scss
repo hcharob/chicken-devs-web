@@ -12,7 +12,7 @@ Text Domain: cidw-5w5
 /* ---------------------------------------------------------
 DEVELOPPEMENT ACTIVABLE -- delete / pour apliquer une bordure a tous
 --------------------------------------------------------- */
-/* {
+/** {
     outline: 1px solid #0900ff !important;
 }
 /* ---------------------------------------------------------
@@ -38,10 +38,11 @@ INITIALISATION
 COMPOSANTES
 --------------------------------------------------------- */
 @import "composantes/header";
-@import "composantes/background";
 @import "composantes/footer";
 
 @import "composantes/pages/projets";
+@import "composantes/pages/page-cours/hexagone";
+@import "composantes/pages/page-cours/listeSession";
 
 @import "composantes/buttons/button-long";
 
@@ -52,3 +53,4 @@ ANIMATION
 /* ---------------------------------------------------------
 LAYOUT
 --------------------------------------------------------- */
+@import "layout/main";

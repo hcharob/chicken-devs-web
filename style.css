@@ -12,7 +12,7 @@ Text Domain: cidw-5w5
 /* ---------------------------------------------------------
 DEVELOPPEMENT ACTIVABLE -- delete / pour apliquer une bordure a tous
 --------------------------------------------------------- */
-/* {
+/** {
     outline: 1px solid #0900ff !important;
 }
 /* ---------------------------------------------------------
@@ -476,16 +476,6 @@ COMPOSANTES
   }
 }
 
-body {
-  background-image: url(images/Twirlywhirly.png);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
 .site__footer {
   background-color: #222426;
   color: #F2F2F2;
@@ -720,6 +710,89 @@ body ::-webkit-scrollbar-thumb:active {
   }
 }
 
+a {
+  color: #F2F2F2;
+}
+
+.formation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formation__conteneur {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  --s: 15vw;
+  /* size */
+  --r: 1.15;
+  /* height ratio */
+  /* clip-path parameter */
+  --hc: calc(var(--s) * 0.5);
+  --vc: calc(var(--s) * 0.26);
+  --m: 3px;
+  /* vertical margin */
+  --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2);
+  /* horizontal margin */
+  --f: calc(2.2*var(--s));
+  background-color: #32353B;
+  width: 50vw;
+  padding-bottom: 5rem;
+}
+
+.formation__liste {
+  /*le conteneur des hexagones*/
+  font-size: 0;
+  /* enleve un bout blanc */
+  width: calc(((var(--n) / 2) + 0.5) * var(--s) + ((var(--n) + 1) * var(--mh)));
+}
+
+.formation__liste article {
+  /* les hexagones */
+  overflow: hidden;
+  width: var(--s);
+  margin: var(--m) var(--mh);
+  height: calc(var(--s)*var(--r));
+  /* calcul effectuer pour trouver la forme désirée 
+                                        dans ce cas se serait le width * 1.1547 */
+  display: inline-block;
+  font-size: initial;
+  /* we reset the font-size if we want to add some content */
+  clip-path: polygon(var(--hc) 0, calc(100% - var(--hc)) 0, 100% var(--vc), 100% calc(100% - var(--vc)), calc(100% - var(--hc)) 100%, var(--hc) 100%, 0 calc(100% - var(--vc)), 0 var(--vc));
+  margin-bottom: calc(var(--m) - var(--vc));
+  /* 0.2886 = le height divisé par 4, nous voulons la marge - le quart du height donc var(--s) * (1.1547 / 4) */
+  background: pink;
+  position: relative;
+}
+
+.formation__liste article .conteneurCours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.formation__liste::before {
+  content: "";
+  width: calc(var(--s)/2 + var(--mh));
+  float: left;
+  height: 100%;
+  shape-outside: repeating-linear-gradient(#000 0 10px, #0000 0 var(--f));
+}
+
+.listeSession ul {
+  display: flex;
+  padding: 0;
+}
+
+.listeSession ul li {
+  list-style-type: none;
+  margin: 0 1rem;
+}
+
 input {
   background-color: #A663FF;
   text-decoration: none;
@@ -818,4 +891,13 @@ ANIMATION
 /* ---------------------------------------------------------
 LAYOUT
 --------------------------------------------------------- */
+body {
+  background-image: url(images/Twirlywhirly.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 /*# sourceMappingURL=style.css.map */
