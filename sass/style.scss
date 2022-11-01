@@ -8,18 +8,27 @@ Requires PHP: 7.0
 License: GNU General Public License v2 or later
 Text Domain: cidw-5w5
 */
+
+/* ---------------------------------------------------------
+DEVELOPPEMENT ACTIVABLE -- delete / pour apliquer une bordure a tous
+--------------------------------------------------------- */
 /** {
     outline: 1px solid #0900ff !important;
 }
 /* ---------------------------------------------------------
 VARIABLES
 --------------------------------------------------------- */
-
+@import "variables/couleurs";
+@import "variables/formes";
+@import "variables/polices";
+@import "variables/structure";
 
 /* ---------------------------------------------------------
 INITIALISATION
 --------------------------------------------------------- */
 
+@import "initialisation/normalize";
+@import "initialisation/box-sizing";
 
 /* ---------------------------------------------------------
 ÉLÉMENTS
@@ -28,11 +37,20 @@ INITIALISATION
 /* ---------------------------------------------------------
 COMPOSANTES
 --------------------------------------------------------- */
+@import "composantes/header";
+@import "composantes/footer";
+
+@import "composantes/pages/projets";
+@import "composantes/pages/page-cours/hexagone";
+@import "composantes/pages/page-cours/listeSession";
+
+@import "composantes/buttons/button-long";
 
 /* ---------------------------------------------------------
 ANIMATION
 --------------------------------------------------------- */
-
+@import "animation/burger";
 /* ---------------------------------------------------------
 LAYOUT
 --------------------------------------------------------- */
+@import "layout/main";
