@@ -1,3 +1,4 @@
+ <!-- Fix content -->
 <footer class="site__footer">
     <div class="site__footer__conteneur">
         <h2 class="footer__titre">Collège de Maisonneuve</h2>

@@ -12,7 +12,7 @@ input{
     clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
     color: white;
     padding: 1em 2em;
-    font-size: clamp(0.75rem, 0.6111rem + 0.4444vw, 1rem);
+    font-size: clamp(0.75rem, 0.6111rem + 0.4444rem, 1rem);
     font-family: Bebas Neue,sans-serif;
     transition: clip-path 0.2s;
     /*peux effacer */
