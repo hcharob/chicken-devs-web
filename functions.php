@@ -15,6 +15,7 @@ function cidw_5w5_enqueue(){
         true); // true pour intégrer le js en bas du document
 
     wp_enqueue_script('cidw-5w5-nav-opacity');
+
 }
 
 add_action("wp_enqueue_scripts", "cidw_5w5_enqueue");
