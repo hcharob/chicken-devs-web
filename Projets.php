@@ -43,7 +43,7 @@
         <section class="scroll__projets">
             <div class="conteneur">
                 <div class="contour">
-                    <div class="forme">1
+                    <div class="forme" id="projet1">1
                     </div>
                 </div>
             </div>
@@ -74,6 +74,12 @@
             <div class="conteneur">
                 <div class="contour">
                     <div class="forme">6
+                    </div>
+                </div>
+            </div>
+            <div class="conteneur">
+                <div class="contour">
+                    <div class="forme">7
                     </div>
                 </div>
             </div>

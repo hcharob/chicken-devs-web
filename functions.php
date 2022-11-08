@@ -27,4 +27,58 @@ function cidw_5w5_register_nav_menu(){
     ));
 }
 add_action( 'after_setup_theme', 'cidw_5w5_register_nav_menu', 0 );
+
+function my_register_sidebars() {
+    /* Register the 'primary' sidebar. */
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_1',
+            'name'          => __( 'Pied de page colonne 1' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_2',
+            'name'          => __( 'Pied de page colonne 2' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_3',
+            'name'          => __( 'Pied de page colonne 3' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_4',
+            'name'          => __( 'Pied de page colonne 4' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    /* Repeat register_sidebar() code for additional sidebars. */
+}
+add_action( 'widgets_init', 'my_register_sidebars' );
 ?>

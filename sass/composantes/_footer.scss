@@ -3,7 +3,7 @@
     background-color: $couleur_noirFonce;
     color: $couleur_blanc;
     width: 100vw;
-    position: fixed;
+    position: absolute;
     bottom: 0;
 
     // ----------------------------- Style du conteneur avec une grille
@@ -28,11 +28,16 @@
             grid-area: titre;
         }
 
+        .footer__titre__principal {
+            margin-top: 0;
+        }
+
         // ----------------------------- Style de la colonne de contact
         .site__footer__contact {
             font-family: $police_texte;
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
             gap: 0.5rem;
             grid-area: contact;
         }
@@ -46,17 +51,15 @@
             grid-area: social;
 
             // ----------------------------- Style du conteneur des icônes
-            .footer__icones {
-                display: flex;
-            }
+            .wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
+                color: $couleur_blanc;
+                background-color: $couleur_mauveSecondaire;
+                border-radius: 0;
+                margin: 0.5rem;
 
-            // ----------------------------- Style de la boîte autour des icônes
-            .boite__carre {
-                background: $couleur_mauveSecondaire;
-                height: 40px;
-                width: 40px;
-                transform: rotate(45deg);
-                margin: 1rem;
+                svg {
+                    transform: rotate(45deg);
+                }
             }
 
             // ----------------------------- Style des icônes
@@ -89,12 +92,9 @@
             padding-left: 5vw;
             grid-template-areas:
                 'titre contact social copyright';
-
-            //Sous-titre
-            h3 {
-                padding-bottom: 1rem;
-                margin: 0;
-            }
+            
+          
+           
 
             //Titre
             .footer__titre {
@@ -103,16 +103,6 @@
                 justify-content: flex-start;
                 padding: 0;
                 margin: 0;
-            }
-
-            .site__footer__contact,
-            .site__footer__social {
-
-                .footer__icones {
-                    .boite__carre {
-                        margin: 1rem;
-                    }
-                }
             }
 
             .site__footer__contact,

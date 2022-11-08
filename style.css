@@ -480,7 +480,7 @@ COMPOSANTES
   background-color: #222426;
   color: #F2F2F2;
   width: 100vw;
-  position: fixed;
+  position: absolute;
   bottom: 0;
 }
 
@@ -501,10 +501,15 @@ COMPOSANTES
   grid-area: titre;
 }
 
+.site__footer .site__footer__conteneur .footer__titre__principal {
+  margin-top: 0;
+}
+
 .site__footer .site__footer__conteneur .site__footer__contact {
   font-family: montserrat, sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 0.5rem;
   grid-area: contact;
 }
@@ -517,16 +522,15 @@ COMPOSANTES
   grid-area: social;
 }
 
-.site__footer .site__footer__conteneur .site__footer__social .footer__icones {
-  display: flex;
+.site__footer .site__footer__conteneur .site__footer__social .wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
+  color: #F2F2F2;
+  background-color: #A663FF;
+  border-radius: 0;
+  margin: 0.5rem;
 }
 
-.site__footer .site__footer__conteneur .site__footer__social .boite__carre {
-  background: #A663FF;
-  height: 40px;
-  width: 40px;
+.site__footer .site__footer__conteneur .site__footer__social .wp-block-social-links:not(.is-style-logos-only) .wp-social-link svg {
   transform: rotate(45deg);
-  margin: 1rem;
 }
 
 .site__footer .site__footer__conteneur .site__footer__social .icones {
@@ -555,20 +559,12 @@ COMPOSANTES
     padding-left: 5vw;
     grid-template-areas: 'titre contact social copyright';
   }
-  .site__footer .site__footer__conteneur h3 {
-    padding-bottom: 1rem;
-    margin: 0;
-  }
   .site__footer .site__footer__conteneur .footer__titre {
     text-align: left;
     font-size: 1.8rem;
     justify-content: flex-start;
     padding: 0;
     margin: 0;
-  }
-  .site__footer .site__footer__conteneur .site__footer__contact .footer__icones .boite__carre,
-  .site__footer .site__footer__conteneur .site__footer__social .footer__icones .boite__carre {
-    margin: 1rem;
   }
   .site__footer .site__footer__conteneur .site__footer__contact,
   .site__footer .site__footer__conteneur .site__footer__social,
@@ -616,25 +612,24 @@ body .projets__barre {
 
 body .scroll__projets {
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  padding-left: 45vw;
-  padding-top: 30vh;
+  padding-top: 25vh;
   scroll-behavior: smooth;
 }
 
 body .conteneur {
-  filter: drop-shadow(rgba(34, 36, 38, 0.3) 12px 12px 30px);
+  filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
 }
 
 body .contour {
   position: relative;
-  width: 27vw;
+  width: 18vw;
   aspect-ratio: 1/1;
   background: #FF207A;
   background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
@@ -643,11 +638,14 @@ body .contour {
 
 body .forme {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
   background: #32353B;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
   transition: all 0.2s;
   transition-timing-function: ease-in-out;
@@ -664,22 +662,26 @@ body .forme:hover {
   bottom: 10px;
 }
 
+body #projet1 {
+  background-image: url("images/Projets/planete-pizza.png");
+}
+
 body .conteneur:nth-of-type(1) {
-  padding-left: 18vw;
+  padding-left: 30vw;
 }
 
 body .conteneur:last-of-type {
-  padding-right: 2vw;
+  padding-right: 4vw;
 }
 
 body .conteneur:nth-of-type(even) {
-  margin-top: -25%;
-  margin-right: -10%;
-  margin-left: -10%;
+  margin-top: -8.5%;
+  margin-right: -3.5%;
+  margin-left: -3.5%;
 }
 
 body .conteneur:nth-of-type(odd) {
-  margin-bottom: -25%;
+  margin-bottom: -7%;
 }
 
 body ::-webkit-scrollbar {
@@ -704,10 +706,48 @@ body ::-webkit-scrollbar-thumb:active {
   background-color: #B98AFF;
 }
 
-@media only screen and (max-width: 1700px) {
+@media only screen and (max-width: 600px) {
   body {
     background-position: 70% 30%;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  body .scroll__projets {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 8vw;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+  }
+  body .conteneur:nth-of-type(1) {
+    padding-left: 0;
+    padding-top: 7vh;
+  }
+  body .conteneur:last-of-type {
+    padding-right: 0;
+    padding-bottom: 7vh;
+  }
+  body .conteneur:nth-of-type(even) {
+    margin-top: -9vh;
+    margin-right: 0;
+    margin-left: 36vw;
+  }
+  body .conteneur:nth-of-type(odd) {
+    margin-bottom: 0;
+    margin-top: -9vh;
+  }
+  body .contour {
+    position: relative;
+    width: 43vw;
+  }
+}
+
+@media (min-width: 767px) {
+  /* Selectors and styles affecting screens WIDER THAN 767px (Tablet) */
 }
 
 a {
