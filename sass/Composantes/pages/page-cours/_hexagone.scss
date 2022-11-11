@@ -1,0 +1,76 @@
+a{
+    color: $couleur_blanc;
+}
+
+.formation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formation__conteneur {
+    display: flex; 
+    justify-content: center;
+    margin: auto;
+    --s: 15vw;  /* size */
+    --r: 1.15; /* height ratio */
+    /* clip-path parameter */
+    --hc: calc(var(--s) * 0.5); 
+    --vc: calc(var(--s) * 0.26);
+    --m: 3px; /* vertical margin */
+    --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2); /* horizontal margin */
+    --f: calc(2.2*var(--s));
+    background-color: $couleur_noir;
+    width: 50vw;
+    padding-bottom: 5rem;
+}
+
+.formation__liste { /*le conteneur des hexagones*/
+    font-size: 0; /* enleve un bout blanc */
+    // width: calc((var(--s) * 3) + (var(--s)/2 + var(--mh)));
+    width:calc(((var(--n) / 2) + 0.5) * var(--s) + ((var(--n) + 1) * var(--mh)));
+    
+    
+}
+
+.formation__liste article { /* les hexagones */
+    overflow: hidden;
+    width: var(--s);
+    margin: var(--m) var(--mh);
+    height: calc(var(--s)*var(--r)); /* calcul effectuer pour trouver la forme désirée 
+                                        dans ce cas se serait le width * 1.1547 */
+    display: inline-block;
+    font-size: initial; /* we reset the font-size if we want to add some content */
+    clip-path: polygon(
+        var(--hc) 0, calc(100% - var(--hc)) 0, /* 2 points at the top */
+        100% var(--vc),100% calc(100% - var(--vc)), /* 2 points at the right */
+        calc(100% - var(--hc)) 100%, var(--hc) 100%, /* 2 points at the bottom */
+        0 calc(100% - var(--vc)),0 var(--vc) /* 2 points at the left */
+    );
+    margin-bottom: calc(var(--m) - var(--vc)); /* 0.2886 = le height divisé par 4, nous voulons la marge - le quart du height donc var(--s) * (1.1547 / 4) */
+    background: pink;
+    position: relative;
+
+    .conteneurCours{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+    }   
+}
+
+.formation__liste::before {
+    content: "";
+    width: calc(var(--s)/2 + var(--mh));
+    float: left;
+    height: 100%;
+    shape-outside: repeating-linear-gradient(#000 0 10px,#0000 0 var(--f));
+}
+
+
+
+
+
+

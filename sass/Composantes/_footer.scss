@@ -1,0 +1,137 @@
+// ----------------------------- Style général du footer
+.site__footer {
+    background-color: $couleur_noirFonce;
+    color: $couleur_blanc;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+
+    // ----------------------------- Style du conteneur avec une grille
+    .site__footer__conteneur {
+        display: grid;
+        grid-template-areas:
+            'titre'
+            'contact'
+            'social'
+            'copyright';
+        padding: 1rem;
+        gap: 1.5rem;
+        font-family: $police_texte;
+        font-size: 0.8rem;
+        text-align: center;
+
+        // ----------------------------- Style du titre
+        .footer__titre {
+            font-family: $police_titre;
+            text-transform: uppercase;
+            font-size: 2rem;
+            grid-area: titre;
+        }
+
+        // ----------------------------- Style de la colonne de contact
+        .site__footer__contact {
+            font-family: $police_texte;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            grid-area: contact;
+        }
+
+        // ----------------------------- Style de la colonne des réseaux sociaux
+        .site__footer__social {
+            padding-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            grid-area: social;
+
+            // ----------------------------- Style du conteneur des icônes
+            .footer__icones {
+                display: flex;
+            }
+
+            // ----------------------------- Style de la boîte autour des icônes
+            .boite__carre {
+                background: $couleur_mauveSecondaire;
+                height: 40px;
+                width: 40px;
+                transform: rotate(45deg);
+                margin: 1rem;
+            }
+
+            // ----------------------------- Style des icônes
+            .icones {
+                height: 40px;
+                width: 40px;
+                transform: rotate(-45deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        // ----------------------------- Style de la colonne des crédits
+        .site__footer__credit {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+            gap: 0.5rem;
+            grid-area: copyright;
+        }
+    }
+
+    //Version Desktop
+    @media (min-width: 767px) {
+
+        /* Selectors and styles affecting screens WIDER THAN 767px (Tablet) */
+        .site__footer__conteneur {
+            padding: 1.5rem;
+            padding-left: 5vw;
+            grid-template-areas:
+                'titre contact social copyright';
+
+            //Sous-titre
+            h3 {
+                padding-bottom: 1rem;
+                margin: 0;
+            }
+
+            //Titre
+            .footer__titre {
+                text-align: left;
+                font-size: 1.8rem;
+                justify-content: flex-start;
+                padding: 0;
+                margin: 0;
+            }
+
+            .site__footer__contact,
+            .site__footer__social {
+
+                .footer__icones {
+                    .boite__carre {
+                        margin: 1rem;
+                    }
+                }
+            }
+
+            .site__footer__contact,
+            .site__footer__social,
+            .site__footer__credit {
+                padding: 0;
+                margin: 0;
+                height: 20%;
+                text-align: left;
+            }
+
+            .site__footer__credit {
+                text-align: left;
+            }
+
+            .site__footer__social {
+                align-items: flex-start;
+            }
+        }
+    }
+
+}
