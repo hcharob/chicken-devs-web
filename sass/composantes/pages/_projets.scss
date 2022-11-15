@@ -1,8 +1,15 @@
+// ----------------------------- Style général de la page de projets - Version mobile
 body {
+    background-position: 70% 30%;
+
+    
+
+    // ----------------------------- Style du titre
     .projets__boite__titre {
         padding-left: 10vw;
         display: flex;
         flex-direction: column;
+        padding-top: 7vh;
     }
 
     .projets__titre {
@@ -17,50 +24,44 @@ body {
         }
     }
 
-    // .projets__fleche-scroll {
-    //     width: 125px;
-    //     position: absolute;
-    //     top: 45vh;
-    //     left: 45vw;
-    //     padding: 0;
-    //     margin: 0;
-    //     z-index: 5;
-    // }
-
+    // ----------------------------- Barre sous le titre
     .projets__barre {
         width: 300px;
         margin-left: 10vw;
-        margin-top: -2vh;
+        margin-top: -3vh;
     }
 
+    // ----------------------------- Style du scroll horizontal
     .scroll__projets {
         width: 100%;
-        height: 70vh;
+        height: auto;
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        // padding-left: 40vw;
-        padding-top: 25vh;
-        scroll-behavior: smooth;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding-left: 8vw;
+        padding-bottom: 5vh;
     }
 
+    // ----------------------------- Conteneur pour avoir une ombre derrière
     .conteneur {
         filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
     }
 
+    // ----------------------------- Conteneur pour avoir un border
     .contour {
         position: relative;
-        width: 18vw;
         // height: 300px;
+        width: 43vw;
         aspect-ratio: 1/1;
         background: $couleur_rosePrimaire;
         background: linear-gradient(135deg, $couleur_rosePrimaire 0%, $couleur_mauvePrimaire 100%);
         clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
     }
 
+    // ----------------------------- Forme hexagonale intérieur
     .forme {
         position: absolute;
         top: 2px;
@@ -87,27 +88,100 @@ body {
         bottom: 10px;
     }
 
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        // background: transparent;
+        transition: 0.3s;
+    }
+
+    .overlay:hover {
+        background: rgba(34, 36, 38, 0.9);
+        .projet__titre {
+            opacity: 1;
+        }
+    }
+
+    .projet__titre {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        font-family: $police_texte;
+        font-size: clamp(0.55rem, 1vw, 1rem);;
+        color: $couleur_blanc;
+        opacity: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        line-height: 1.3em;
+        text-align: center;
+    }
+
+    // ----------------------------- Projet no.1
     #projet1 {
-        background-image: url("images/Projets/planete-pizza.png");
+        background-image: url("images/Projets/Hervee1.png");
     }
 
-    .conteneur:nth-of-type(1) {
-        padding-left: 30vw;
+    #projet2 {
+        background-image: url("images/Projets/Jo3.png");
+        
     }
 
+    #projet3 {
+        background-image: url("images/Projets/Yan2.png");
+    }
+
+    #projet4 {
+        background-image: url("images/Projets/Kev2.png");  
+    }
+
+    #projet5 {
+        background-image: url("images/Projets/Hervee2.png");
+        background-position: 54%;
+    }
+
+    #projet6 {
+        background-image: url("images/Projets/Jo1.png");
+        background-position: 5% 65%;
+    }
+
+    #projet7 {
+        background-image: url("images/Projets/Yan3.png");
+        
+    }
+    #projet8 {
+        background-image: url("images/Projets/Kev1.jpg");
+    }
+
+    // ----------------------------- Positionnement des hexagones
+    .scroll__projets .conteneur:nth-of-type(1) {
+        padding-left: 0;
+        margin-top: 0;
+    }
 
     .conteneur:last-of-type {
-        padding-right: 4vw;
+        padding-right: 0;
+        padding-bottom: 7%;
     }
 
     .conteneur:nth-of-type(even) {
-        margin-top: -8.5%;
-        margin-right: -3.5%;
-        margin-left: -3.5%;
+        margin-top: -25%;
+        margin-right: 0;
+        margin-left: 41%;
     }
 
     .conteneur:nth-of-type(odd) {
-        margin-bottom: -7%;
+        margin-bottom: 0;
+        margin-top: -25%;
     }
 
     /* Barre de scroll */
@@ -132,59 +206,62 @@ body {
     ::-webkit-scrollbar-thumb:active {
         background-color: $couleur_mauveSecondaire-pale;
     }
-}
 
-@media only screen and (max-width: 600px) {
-    body {
-        background-position: 70% 30%;
-    }
-}
-
-//Version mobile
-@media only screen and (max-width: 600px) {
-    body {
-        .scroll__projets {
-            flex-direction: column;
-            justify-content: flex-start;
-            padding-top: 0;
-            overflow-x: hidden;
-            overflow-y: scroll;
-            padding-left: 8vw;
-            padding-top: 2vh;
-            padding-bottom: 5vh;
-        }
-
-        .conteneur:nth-of-type(1) {
-            padding-left: 0;
-            padding-top: 7vh;
-        }
-
-        .conteneur:last-of-type {
-            padding-right: 0;
-            padding-bottom: 7vh;
-        }
-
-        .conteneur:nth-of-type(even) {
-            margin-top: -9vh;
-            margin-right: 0;
-            margin-left: 36vw;
-        }
-
-        .conteneur:nth-of-type(odd) {
-            margin-bottom: 0;
-            margin-top: -9vh;
-        }
-
-        .contour {
-            position: relative;
-            width: 43vw;
-        }
-    }
+    // .projets__fleche-scroll {
+    //     width: 125px;
+    //     position: absolute;
+    //     top: 45vh;
+    //     left: 45vw;
+    //     padding: 0;
+    //     margin: 0;
+    //     z-index: 5;
+    // }
 }
 
 //Version Desktop
 @media (min-width: 767px) {
+
     /* Selectors and styles affecting screens WIDER THAN 767px (Tablet) */
+    body {
+        background-position: center;
 
+        .scroll__projets {
+            height: 70vh;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            // padding-left: 40vw;
+            padding-top: 22vh;
+            scroll-behavior: smooth;
+        }
 
+        .contour {
+            width: 18vw;
+            aspect-ratio: 1/1;
+        }
+
+        .scroll__projets .conteneur:nth-of-type(1) {
+            padding-left: 25vw;
+            padding-top: 0;
+        }
+
+        .conteneur:last-of-type {
+            padding-right: 4vw;
+            padding-bottom: 0;
+        }
+
+        .conteneur:nth-of-type(even) {
+            margin-top: -9.5%;
+            margin-right: -3.5%;
+            margin-left: -3.5%;
+        }
+
+        .conteneur:nth-of-type(odd) {
+            margin-bottom: -7%;
+            margin-top: 0;
+        }
+    }
 }

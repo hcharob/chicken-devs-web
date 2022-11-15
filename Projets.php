@@ -40,56 +40,88 @@
             </g>
             <polyline class="cls-1" points="107.84 4.6 114.03 10.79 107.84 16.99" />
         </svg> -->
+
+        <!-- Pour avoir la gallery de Wordpress -->
+        <?php if (have_posts()): the_post(); ?>
+        <?php the_content() ?>
+        <?php endif ?>
+
         <section class="scroll__projets">
             <div class="conteneur">
                 <div class="contour">
-                    <div class="forme" id="projet1">1
+                    <div class="forme" id="projet1">
+                        <div class="overlay">
+                            <p class="projet__titre">Planète Pizza</p>
+                        </div>
+                    </div>
+                    <!-- <button class='cours__desc__ouvrir'> La suite </button> -->
+                </div>
+            </div>
+            <div class="conteneur">
+                <div class="contour">
+                    <div class="forme" id="projet2">
+                        <div class="overlay">
+                            <p class="projet__titre">Pinball</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="conteneur">
                 <div class="contour">
-                    <div class="forme">2
+                    <div class="forme" id="projet3">
+                        <div class="overlay">
+                            <p class="projet__titre">Racines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="conteneur">
+                <div class="contour">
+                    <div class="forme" id="projet4">
+                        <div class="overlay">
+                            <p class="projet__titre">La recherche <br>pour le <br> Dakimakura</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="conteneur">
                 <div class="contour">
-                    <div class="forme">3
+                    <div class="forme" id="projet5">
+                        <div class="overlay">
+                            <p class="projet__titre">Somnia</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="conteneur">
                 <div class="contour">
-                    <div class="forme">4
+                    <div class="forme" id="projet6">
+                        <div class="overlay">
+                            <p class="projet__titre">La dernière <br> Lumière</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="conteneur">
                 <div class="contour">
-                    <div class="forme">5
+                    <div class="forme" id="projet7">
+                        <div class="overlay">
+                            <p class="projet__titre">Made to last</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="conteneur">
                 <div class="contour">
-                    <div class="forme">6
+                    <div class="forme" id="projet8">
+                    <div class="overlay">
+                            <p class="projet__titre">Projet8</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">7
-                    </div>
-                </div>
-            </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">7
-                    </div>
-                </div>
-            </div>
-            
+
         </section>
     </section>
 </main>
