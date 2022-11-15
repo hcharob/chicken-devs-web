@@ -486,7 +486,7 @@ COMPOSANTES
 
 .site__footer .site__footer__conteneur {
   display: grid;
-  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
+  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
   padding: 1rem;
   gap: 1.5rem;
   font-family: montserrat, sans-serif;
@@ -710,14 +710,46 @@ body ::-webkit-scrollbar-thumb:active {
   }
 }
 
-a {
-  color: #F2F2F2;
+.site__main {
+  padding-top: 5rem;
+  padding-bottom: 10rem;
 }
 
 .formation {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.formation a {
+  color: #F2F2F2;
+  font-family: bebas-neue-pro, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.gradient__conteneur {
+  height: 35vh;
+  width: 62vw;
+  background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient__conteneur .conteneur__titre {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  padding: 1vw;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 60vw;
+  color: #F2F2F2;
+  background-color: #32353B;
+  font-size: clamp(1.25rem, 0.5556rem + 2.2222vw, 2.5rem);
+  font-family: bebas-neue-pro, sans-serif;
 }
 
 .formation__conteneur {
@@ -736,16 +768,15 @@ a {
   --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2);
   /* horizontal margin */
   --f: calc(2.2*var(--s));
-  background-color: #32353B;
-  width: 50vw;
+  background-color: #222426;
+  width: 70vw;
   padding-bottom: 5rem;
 }
 
 .formation__liste {
   /*le conteneur des hexagones*/
-  font-size: 0;
-  /* enleve un bout blanc */
   width: calc(((var(--n) / 2) + 0.5) * var(--s) + ((var(--n) + 1) * var(--mh)));
+  margin: 1rem;
 }
 
 .formation__liste article {
@@ -762,17 +793,7 @@ a {
   clip-path: polygon(var(--hc) 0, calc(100% - var(--hc)) 0, 100% var(--vc), 100% calc(100% - var(--vc)), calc(100% - var(--hc)) 100%, var(--hc) 100%, 0 calc(100% - var(--vc)), 0 var(--vc));
   margin-bottom: calc(var(--m) - var(--vc));
   /* 0.2886 = le height divisé par 4, nous voulons la marge - le quart du height donc var(--s) * (1.1547 / 4) */
-  background: pink;
   position: relative;
-}
-
-.formation__liste article .conteneurCours {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
 }
 
 .formation__liste::before {
@@ -783,14 +804,63 @@ a {
   shape-outside: repeating-linear-gradient(#000 0 10px, #0000 0 var(--f));
 }
 
+.conteneurCours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 98%;
+  text-align: center;
+  width: 98%;
+  background-color: #32353B;
+  clip-path: polygon(var(--hc) 0, calc(100% - var(--hc)) 0, 100% var(--vc), 100% calc(100% - var(--vc)), calc(100% - var(--hc)) 100%, var(--hc) 100%, 0 calc(100% - var(--vc)), 0 var(--vc));
+}
+
+.conteneurCours h3 {
+  font-size: clamp(0.625rem, 0.1389rem + 1.5556vw, 1.5rem);
+}
+
+.conteneurCours .cours__sigle {
+  font-size: clamp(0.625rem, 0.1389rem + 1.5556vw, 1.5rem);
+  margin: 0;
+}
+
+.conteneurContour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
+}
+
+.listeSession {
+  width: 42vw;
+  height: auto;
+}
+
 .listeSession ul {
   display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
   padding: 0;
+  margin-top: 1rem;
 }
 
 .listeSession ul li {
+  margin: auto;
   list-style-type: none;
   margin: 0 1rem;
+  white-space: nowrap;
+}
+
+.listeSession::after {
+  content: url(images/Fichier_3.svg);
 }
 
 input {

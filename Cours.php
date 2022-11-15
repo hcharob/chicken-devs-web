@@ -5,13 +5,16 @@
 
 <main class="site__main">
     <section class="formation">
-        <h2 class="formation__titre">Liste des cours du programme TIM</h2>
+        <div class="gradient__conteneur">
+            <div class="conteneur__titre">
+                <h2 class="formation__titre">Liste des cours du programme TIM</h2>
+            </div>
+        </div>
         
         <?php wp_nav_menu(array(
             "menu" => "categorie_cours",
             "container_class" => "listeSession"
         )) ?>
-        
         <div class="formation__conteneur" style="--n: <?php echo $cat_count -> count ?>">
             <div id="myDIV" class="formation__liste">
                     <?php 

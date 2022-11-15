@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 656.71 26.71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #a663ff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="fleche-scroll">
+    <g>
+      <line class="cls-1" x1="25.3" y1="13.36" x2="632.3" y2="13.36"/>
+      <rect class="cls-1" x="634.91" y="4.91" width="16.89" height="16.89" transform="translate(197.88 -451.01) rotate(45)"/>
+      <rect class="cls-1" x="4.91" y="4.91" width="16.89" height="16.89" transform="translate(13.36 -5.53) rotate(45)"/>
+    </g>
+  </g>
+</svg>
