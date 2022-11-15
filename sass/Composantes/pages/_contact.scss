@@ -1,7 +1,50 @@
-// Test
+// Trucs à faire:
+// Convertir pixels en unité relative ou clamp()
+// Faire en sorte que le background du sélection utilise le média de Wordpress
 
-.profs div {
-    width: 512px;
-    height: 512px;
-    background-color: aqua;
+.profs {
+    display: flex;
+    padding-top: 10vh;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &_canvas {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-color: $couleur_noir;
+        height: 65vh;
+        width: 70vw;
+        border-radius: 16px;
+    }
+
+    &_selection {
+        display: flex;
+        object-fit: cover;
+        height: 128px;
+        width: 128px;
+        transition: margin 0.25s;
+        clip-path: $clippathHexagone;
+
+        &:nth-child(even) {
+            background-color: aqua; // Test
+            margin: 0 -16px -36px -16px;
+
+            &:hover {
+                margin: 0 0 -64px 0;
+            }
+        }
+
+        &:nth-child(odd) {
+            background-color: red; // Test
+            margin: 0 -16px -92px -16px;
+
+            &:hover {
+                margin: 0 0 -64px 0;
+            }
+        }
+    }
 }
+
