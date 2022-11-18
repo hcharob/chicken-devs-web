@@ -38,7 +38,7 @@ function my_register_widgets() {
 	register_sidebar( array(
 		'name'          => 'home video banner',
 		'id'            => 'home_video_banner',
-		'before_widget' => '<div>',
+		'before_widget' => '<div class="videoBanner">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="rounded">',
 		'after_title'   => '</h2>',

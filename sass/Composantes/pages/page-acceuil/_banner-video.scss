@@ -1,9 +1,13 @@
 .showcase{
     width: 100vw;
-    height: 100vh;
-    background-color: grey;
-    #introVideo{
-        width: 100vw;
-        height: 100vh;
+    max-height: 100Vh;
+
+    background-image: url(images/Background.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    .videoBanner{
+        opacity: 20%;
     }
 }
