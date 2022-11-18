@@ -480,13 +480,12 @@ COMPOSANTES
   background-color: #222426;
   color: #F2F2F2;
   width: 100vw;
-  position: fixed;
   bottom: 0;
 }
 
 .site__footer .site__footer__conteneur {
   display: grid;
-  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
+  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
   padding: 1rem;
   gap: 1.5rem;
   font-family: montserrat, sans-serif;
@@ -791,6 +790,56 @@ a {
 .listeSession ul li {
   list-style-type: none;
   margin: 0 1rem;
+}
+
+.site__main__acceuil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site__main__acceuil .pages__sections {
+  position: relative;
+  top: -75px;
+  width: 70vw;
+  background-color: rgba(50, 53, 59, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site__main__acceuil .pages__sections .pages__sections__section {
+  height: 90vh;
+  width: 100%;
+  background-color: #32353b;
+  box-shadow: 0px 2px 10px black;
+}
+
+.site__main__acceuil .pages__sections .section1 {
+  z-index: 4;
+}
+
+.site__main__acceuil .pages__sections .section2 {
+  z-index: 3;
+}
+
+.site__main__acceuil .pages__sections .section3 {
+  z-index: 2;
+}
+
+.site__main__acceuil .pages__sections .section4 {
+  z-index: 1;
+}
+
+.showcase {
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+}
+
+.showcase #introVideo {
+  width: 100vw;
+  height: 100vh;
 }
 
 input {

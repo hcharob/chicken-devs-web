@@ -27,4 +27,23 @@ function cidw_5w5_register_nav_menu(){
     ));
 }
 add_action( 'after_setup_theme', 'cidw_5w5_register_nav_menu', 0 );
+
+/*---------------------------------------------------------- Enregistrement des widget */
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function my_register_widgets() {
+
+	register_sidebar( array(
+		'name'          => 'home video banner',
+		'id'            => 'home_video_banner',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'my_register_widgets' );
 ?>
