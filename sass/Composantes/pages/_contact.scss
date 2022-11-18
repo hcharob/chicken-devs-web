@@ -1,6 +1,6 @@
 // Trucs à faire:
-// Convertir pixels en unité relative ou clamp()
 // Faire en sorte que le background du sélection utilise le média de Wordpress
+// Trouver un moyen pour changer le background d'un autre class sur hover
 
 .profs {
     display: flex;
@@ -17,34 +17,122 @@
         background-color: $couleur_noir;
         height: 65vh;
         width: 70vw;
-        border-radius: 16px;
     }
 
     &_selection {
         display: flex;
-        object-fit: cover;
-        height: 128px;
-        width: 128px;
+        aspect-ratio: 1; // Nouveau fonctionnalité de CSS
+        width: 5vw;
         transition: margin 0.25s;
         clip-path: $clippathHexagone;
 
         &:nth-child(even) {
-            background-color: aqua; // Test
-            margin: 0 -16px -36px -16px;
+            background: white; // Test
+            margin: 0 0 calc(-2.5vh - 0.3125vh) 0;
 
             &:hover {
-                margin: 0 0 -64px 0;
+                margin: 0 0 calc(-5vh + 0.15625vh) 0;
+
+                & + .profs_canvas {
+                    background-color: blue;
+                }
             }
         }
 
         &:nth-child(odd) {
-            background-color: red; // Test
-            margin: 0 -16px -92px -16px;
+            background: black; // Test
+            margin: 0 0 calc(-7.5vh + 0.3125vh) 0;
 
             &:hover {
-                margin: 0 0 -64px 0;
+                margin: 0 0 calc(-5vh + 0.15625vh) 0;
             }
         }
+
+        // Test - NE FONCTIONNENT PAS!!!
+        /* &:nth-child(1) {
+            background-image: url("/images/profs/icone/ahm1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/ahm2.JPG");
+            }
+        }
+        &:nth-child(2) {
+            background-image: url("/images/profs/icone/cam1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/cam2.JPG");
+            }
+        }
+        &:nth-child(3) {
+            background-image: url("/images/profs/icone/car1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/car2.JPG");
+            }
+        }
+        &:nth-child(4) {
+            background-image: url("/images/profs/icone/dav1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/dav2.JPG");
+            }
+        }
+        &:nth-child(5) {
+            background-image: url("/images/profs/icone/den1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/den2.JPG");
+            }
+        }
+        &:nth-child(6) {
+            background-image: url("/images/profs/icone/dom1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/dom2.JPG");
+            }
+        }
+        &:nth-child(7) {
+            background-image: url("/images/profs/icone/edd1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/edd2.JPG");
+            }
+        }
+        &:nth-child(8) {
+            background-image: url("/images/profs/icone/gre1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/gre2.JPG");
+            }
+        }
+        &:nth-child(9) {
+            background-image: url("/images/profs/icone/joh1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/joh2.JPG");
+            }
+        }
+        &:nth-child(10) {
+            background-image: url("/images/profs/icone/man1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/man2.JPG");
+            }
+        }
+        &:nth-child(11) {
+            background-image: url("/images/profs/icone/mar1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/mar2.JPG");
+            }
+        }
+        &:nth-child(12) {
+            background-image: url("/images/profs/icone/mat1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/mat2.JPG");
+            }
+        }
+        &:nth-child(13) {
+            background-image: url("/images/profs/icone/ste1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/ste2.JPG");
+            }
+        }
+        &:nth-child(14) {
+            background-image: url("/images/profs/icone/vin1.JPG");
+            &:hover {
+                background-image: url("/images/profs/icone/vin2.JPG");
+            }
+        } */
     }
 }
 
