@@ -1,9 +1,6 @@
 // ----------------------------- Style général de la page de projets - Version mobile
 body {
     background-position: 70% 30%;
-
-    
-
     // ----------------------------- Style du titre
     .projets__boite__titre {
         padding-left: 10vw;
@@ -28,7 +25,7 @@ body {
     .projets__barre {
         width: 300px;
         margin-left: 10vw;
-        margin-top: -3vh;
+        margin-top: -2vh;
     }
 
     // ----------------------------- Style du scroll horizontal
@@ -61,7 +58,7 @@ body {
         clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
     }
 
-    // ----------------------------- Forme hexagonale intérieur
+    // ----------------------------- Forme hexagonale intérieur des projets
     .forme {
         position: absolute;
         top: 2px;
@@ -77,9 +74,35 @@ body {
         transition-timing-function: ease-in-out;
         cursor: pointer;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        // ----------------------------- Image des projets
+        .wp-block-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        // ----------------------------- Ajustements des positions pour les projets
+        .img2_kev {
+            width: 100%;
+            height: auto;
+        }
+
+        .img2_jo {
+            img {
+                object-position: 5%;
+            }  
+        }
+
+        // ----------------------------- Texte de description des projets étudiants, caché par défaut
+        .description_projet {
+            display: none;
+        }
     }
+
 
     .forme:hover {
         top: 10px;
@@ -88,6 +111,7 @@ body {
         bottom: 10px;
     }
 
+    // ----------------------------- overlay pour le effet de hover
     .overlay {
         position: absolute;
         top: 0;
@@ -96,7 +120,6 @@ body {
         right: 0;
         height: 100%;
         width: 100%;
-        // background: transparent;
         transition: 0.3s;
     }
 
@@ -124,42 +147,6 @@ body {
         letter-spacing: 0.2em;
         line-height: 1.3em;
         text-align: center;
-    }
-
-    // ----------------------------- Projet no.1
-    #projet1 {
-        background-image: url("images/Projets/Hervee1.png");
-    }
-
-    #projet2 {
-        background-image: url("images/Projets/Jo3.png");
-        
-    }
-
-    #projet3 {
-        background-image: url("images/Projets/Yan2.png");
-    }
-
-    #projet4 {
-        background-image: url("images/Projets/Kev2.png");  
-    }
-
-    #projet5 {
-        background-image: url("images/Projets/Hervee2.png");
-        background-position: 54%;
-    }
-
-    #projet6 {
-        background-image: url("images/Projets/Jo1.png");
-        background-position: 5% 65%;
-    }
-
-    #projet7 {
-        background-image: url("images/Projets/Yan3.png");
-        
-    }
-    #projet8 {
-        background-image: url("images/Projets/Kev1.jpg");
     }
 
     // ----------------------------- Positionnement des hexagones
@@ -207,15 +194,16 @@ body {
         background-color: $couleur_mauveSecondaire-pale;
     }
 
-    // .projets__fleche-scroll {
-    //     width: 125px;
-    //     position: absolute;
-    //     top: 45vh;
-    //     left: 45vw;
-    //     padding: 0;
-    //     margin: 0;
-    //     z-index: 5;
-    // }
+    //Gallerie Wordpress
+    .wp-block-image:not(.logo_tim) {
+       height: 100%;
+       margin-top: 0;
+    }
+
+    .logo_tim {
+        margin-top: -1%;
+    }
+
 }
 
 //Version Desktop
@@ -233,7 +221,6 @@ body {
             flex-wrap: nowrap;
             overflow-x: scroll;
             overflow-y: hidden;
-            // padding-left: 40vw;
             padding-top: 22vh;
             scroll-behavior: smooth;
         }

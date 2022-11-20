@@ -18,18 +18,13 @@
              <?php get_sidebar("pied_page_colonne_4")?>
          </div>
      </div>
-
-     <!-- <div class="boite__modale">
-         <button class="boite__modale__ferme">X</button>
-         <article class="boite__modale__texte"></article>
-     </div> -->
-
+     
+     <!-- Carrousel du site -->
      <div class="boite__carrousel">
-         <button class="boite__carrousel__ferme">X</button>
+         <button class="boite__carrousel__ferme">x</button>
          <section class="boite__carrousel__navigation"></section>
          <section class="boite__carrousel__img"></section>
      </div>
-
  </footer>
  <?php wp_footer(); ?>
  </body>

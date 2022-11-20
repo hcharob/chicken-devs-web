@@ -17,9 +17,7 @@
   let boite__carrousel__img = document.querySelector(".boite__carrousel__img")
   /* La collection des images de la galerie */
   let galerie__img = document.querySelectorAll('.forme');
-  // console.log(galerie__img.length);   
-
-
+  
   /**
    * 
    * Écouteur pour fermer la fenêtre 
