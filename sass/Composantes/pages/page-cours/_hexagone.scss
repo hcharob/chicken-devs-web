@@ -1,3 +1,5 @@
+
+
 .site__main{
     padding-top: 5rem;
     padding-bottom: 10rem;
@@ -8,13 +10,12 @@
     flex-direction: column;
     align-items: center;
     a{
-        color: $couleur_blanc;
         font-family: $police_titre;
         letter-spacing: 0.1em;
     } 
 }
 .gradient__conteneur{
-    height: 35vh;
+    
     width: 62vw;
     background: linear-gradient(135deg, $couleur_rosePrimaire 0%, $couleur_mauvePrimaire 100%);
    
@@ -29,7 +30,8 @@
         padding: 1vw;
         justify-content: center;
         align-items: center;
-        height: 30vh;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
         width: 60vw;
         color: $couleur_blanc;
         background-color: $couleur_noir;
@@ -40,10 +42,12 @@
    
 
 .formation__conteneur {//Conteneur du conteneur,stupide mais necessaire
+    
     display: flex; 
+    flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    --s: 15vw;  /* size */
+    --s:40vw;  /* size */
     --r: 1.15; /* height ratio */
     /* clip-path parameter */
     --hc: calc(var(--s) * 0.5); 
@@ -51,7 +55,7 @@
     --m: 3px; /* vertical margin */
     --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2); /* horizontal margin */
     --f: calc(2.2*var(--s));
-    background-color: $couleur_noirFonce;
+    background-color: #222426a1;
     width: 70vw;
     padding-bottom: 5rem;
 }
@@ -97,12 +101,18 @@
     height: 98%;
     text-align: center;
     width: 98%;
+    
+    
     h3{
-        font-size: unquote("clamp(0.625rem, 0.1389rem + 1.5556vw, 1.5rem)");
+        font-size: unquote("clamp(1rem, 0.1389rem + 1.5556vw, 1.5rem)");
+        a{
+            color:$couleur_blanc
+        }
     }
     .cours__sigle{
-        font-size: unquote("clamp(0.625rem, 0.1389rem + 1.5556vw, 1.5rem)");
+        font-size: unquote("clamp(0.9rem, 0.1389rem + 1.5556vw, 1.5rem)");
         margin: 0;
+        color: $couleur_blanc;
     }
     background-color: $couleur_noir;
     clip-path: polygon(
@@ -112,6 +122,8 @@
         0 calc(100% - var(--vc)),0 var(--vc) /* 2 points at the left */
     );
 }
+
+
 
 .conteneurContour{
     display: flex;
@@ -123,4 +135,10 @@
     width: 100%;
     position: relative;
     background: linear-gradient(135deg, $couleur_rosePrimaire 0%, $couleur_mauvePrimaire 100%);
+}
+
+@media (min-width:$largeur__media--desktop){
+    .formation__conteneur{
+        --s: 15vw;
+    }
 }
