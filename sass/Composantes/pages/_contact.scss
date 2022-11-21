@@ -57,16 +57,16 @@
         justify-content: space-around;
         align-items: center;
         margin-bottom: -7.5vh;
-        
-        // Ne fonctionne pas
-        &::after {
-            background: $couleur_rosePrimaire; 
-            clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
-        }
+        background: linear-gradient(180deg, 
+        rgba(0,0,0,0) 0%, 
+        rgba(0,0,0,0) 45%, 
+        rgba(255,32,122,1) 50%, 
+        rgba(255,32,122,1) 75%, 
+        rgba(0,0,0,0) 80%, 
+        rgba(0,0,0,0) 100%);
     }
 
     &_choix {
-        z-index: 100;
         display: flex;
         aspect-ratio: 1;
         width: 5vw;
@@ -91,7 +91,7 @@
         }
 
         &:nth-child(odd) {
-            margin-bottom: -5vh;
+            margin-bottom: -10vh;
 
             /* &:hover {
                 margin-bottom: -5vh;
