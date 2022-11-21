@@ -14,17 +14,17 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 4fr 1fr;
-        background-color: $couleur_noir;
         height: 60vh;
         width: 70vw;
-        box-shadow: 0 0 1vw $couleur_noirFonce;
     }
 
     &_info {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        background-color: $couleur_noir;
         border-left: 1vw solid $couleur_mauvePrimaire;
         color: $couleur_blanc;
+        box-shadow: 0 0 1vw $couleur_noirFonce;
 
         &_nom {
             font-family: $police_titre;
@@ -36,17 +36,18 @@
         &_desc {
             font-family: $police_texte;
             font-size: 2rem;
-            padding-left: 1vw;
+            padding: 0 1vw;
         }
     }
 
     &_fond {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
-        border-right: 1vw solid $couleur_mauvePrimaire;
+        border-right: 1vw solid $couleur_mauveSecondaire;
         background-image: url(images/profs/portrait/ahm3.JPG);
         background-position: center;
         background-size: cover;
+        box-shadow: 0 0 1vw $couleur_noirFonce;
     }
 
     &_selection {
@@ -54,42 +55,58 @@
         grid-row: 2 / 3;
         display: flex;
         justify-content: space-around;
-        align-items: flex-end;
-        border: 1vw solid $couleur_rosePrimaire;
-        border-top: none;
-        box-shadow: 0 0 1vw $couleur_noirFonce inset;
+        align-items: center;
+        margin-bottom: -7.5vh;
+        
+        // Ne fonctionne pas
+        &::after {
+            background: $couleur_rosePrimaire; 
+            clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
+        }
     }
 
     &_choix {
+        z-index: 100;
         display: flex;
         aspect-ratio: 1;
         width: 5vw;
-        margin-bottom: -5vh;
         transition: margin-bottom 0.25s, width 0.25s;
         clip-path: $clippathHexagone;
         background-position: center;
         background-size: cover;
+        animation: neon alternate 2s forwards infinite ease;
 
         &:hover {
             width: 7.5vw;
+            border: 1vh solid $couleur_rosePrimaire;
+            border-left: none;
+            border-right: none;
         }
 
         &:nth-child(even) {
 
-            &:hover {
-                margin-bottom: -7.5vh;
-            }
+            /* &:hover {
+                margin-bottom: -2.5vh;
+            } */
         }
 
         &:nth-child(odd) {
-            margin-bottom: -7.5vh;
+            margin-bottom: -5vh;
 
-            &:hover {
-                margin-bottom: -10vh;
+            /* &:hover {
+                margin-bottom: -5vh;
+            } */
+        }
+
+        @keyframes neon {
+            from {
+                box-shadow: 0 0 0 0 $couleur_rosePrimaire inset;
+            }
+            to {
+                box-shadow: 0 1vh 2vw 0 $couleur_mauveSecondaire inset;
             }
         }
 
-        // Images des profs
         &:nth-child(1) {
             background-image: url(images/profs/icone/ahm1.JPG);
             &:hover {
@@ -101,78 +118,91 @@
         }
         &:nth-child(2) {
             background-image: url(images/profs/icone/cam1.JPG);
+            animation-delay: 0.25s;
             &:hover {
                 background-image: url(images/profs/icone-hover/cam2.JPG);
             }
         }
         &:nth-child(3) {
             background-image: url(images/profs/icone/car1.JPG);
+            animation-delay: 0.5s;
             &:hover {
                 background-image: url(images/profs/icone-hover/car2.JPG);
             }
         }
         &:nth-child(4) {
             background-image: url(images/profs/icone/dav1.JPG);
+            animation-delay: 0.75s;
             &:hover {
                 background-image: url(images/profs/icone-hover/dav2.JPG);
             }
         }
         &:nth-child(5) {
             background-image: url(images/profs/icone/den1.JPG);
+            animation-delay: 1s;
             &:hover {
                 background-image: url(images/profs/icone-hover/den2.JPG);
             }
         }
         &:nth-child(6) {
             background-image: url(images/profs/icone/dom1.JPG);
+            animation-delay: 1.25s;
             &:hover {
                 background-image: url(images/profs/icone-hover/dom2.JPG);
             }
         }
         &:nth-child(7) {
             background-image: url(images/profs/icone/edd1.JPG);
+            animation-delay: 1.5s;
             &:hover {
                 background-image: url(images/profs/icone-hover/edd2.JPG);
             }
         }
         &:nth-child(8) {
             background-image: url(images/profs/icone/gre1.JPG);
+            animation-delay: 1.75s;
             &:hover {
                 background-image: url(images/profs/icone-hover/gre2.JPG);
             }
         }
         &:nth-child(9) {
             background-image: url(images/profs/icone/joh1.JPG);
+            animation-delay: 2s;
             &:hover {
                 background-image: url(images/profs/icone-hover/joh2.JPG);
             }
         }
         &:nth-child(10) {
             background-image: url(images/profs/icone/man1.JPG);
+            animation-delay: 2.25s;
             &:hover {
                 background-image: url(images/profs/icone-hover/man2.JPG);
             }
         }
         &:nth-child(11) {
             background-image: url(images/profs/icone/mar1.JPG);
+            animation-delay: 2.5s;
             &:hover {
                 background-image: url(images/profs/icone-hover/mar2.JPG);
             }
         }
         &:nth-child(12) {
             background-image: url(images/profs/icone/mat1.JPG);
+            animation-delay: 2.75s;
             &:hover {
                 background-image: url(images/profs/icone-hover/mat2.JPG);
             }
         }
         &:nth-child(13) {
             background-image: url(images/profs/icone/ste1.JPG);
+            animation-delay: 3s;
             &:hover {
                 background-image: url(images/profs/icone-hover/ste2.JPG);
             }
         }
         &:nth-child(14) {
             background-image: url(images/profs/icone/vin1.JPG);
+            animation-delay: 3.25s;
             &:hover {
                 background-image: url(images/profs/icone-hover/vin2.JPG);
             }
