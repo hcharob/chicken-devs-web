@@ -4,135 +4,179 @@
 
 .profs {
     display: flex;
-    padding-top: 10vh;
+    padding-top: 12.5vh;
     height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
 
     &_canvas {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 4fr 1fr;
         background-color: $couleur_noir;
-        height: 65vh;
+        height: 60vh;
         width: 70vw;
+        box-shadow: 0 0 1vw $couleur_noirFonce;
+    }
+
+    &_info {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border-left: 1vw solid $couleur_mauvePrimaire;
+        color: $couleur_blanc;
+
+        &_nom {
+            font-family: $police_titre;
+            font-size: 4rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        &_desc {
+            font-family: $police_texte;
+            font-size: 2rem;
+            padding-left: 1vw;
+        }
+    }
+
+    &_fond {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        border-right: 1vw solid $couleur_mauvePrimaire;
+        background-image: url(images/profs/portrait/ahm3.JPG);
+        background-position: center;
+        background-size: cover;
     }
 
     &_selection {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
         display: flex;
-        aspect-ratio: 1; // Nouveau fonctionnalité de CSS
+        justify-content: space-around;
+        align-items: flex-end;
+        border: 1vw solid $couleur_rosePrimaire;
+        border-top: none;
+        box-shadow: 0 0 1vw $couleur_noirFonce inset;
+    }
+
+    &_choix {
+        display: flex;
+        aspect-ratio: 1;
         width: 5vw;
-        transition: margin 0.25s;
+        margin-bottom: -5vh;
+        transition: margin-bottom 0.25s, width 0.25s;
         clip-path: $clippathHexagone;
+        background-position: center;
+        background-size: cover;
+
+        &:hover {
+            width: 7.5vw;
+        }
 
         &:nth-child(even) {
-            background: white; // Test
-            margin: 0 0 calc(-2.5vh - 0.3125vh) 0;
 
             &:hover {
-                margin: 0 0 calc(-5vh + 0.15625vh) 0;
-
-                & + .profs_canvas {
-                    background-color: blue;
-                }
+                margin-bottom: -7.5vh;
             }
         }
 
         &:nth-child(odd) {
-            background: black; // Test
-            margin: 0 0 calc(-7.5vh + 0.3125vh) 0;
+            margin-bottom: -7.5vh;
 
             &:hover {
-                margin: 0 0 calc(-5vh + 0.15625vh) 0;
+                margin-bottom: -10vh;
             }
         }
 
-        // Test - NE FONCTIONNENT PAS!!!
-        /* &:nth-child(1) {
-            background-image: url("/images/profs/icone/ahm1.JPG");
+        // Images des profs
+        &:nth-child(1) {
+            background-image: url(images/profs/icone/ahm1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/ahm2.JPG");
+                background-image: url(images/profs/icone-hover/ahm2.JPG);
+                /* & ~ .profs_fond {
+                    background-image: url(images/profs/portrait/ahm3.JPG);
+                } */
             }
         }
         &:nth-child(2) {
-            background-image: url("/images/profs/icone/cam1.JPG");
+            background-image: url(images/profs/icone/cam1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/cam2.JPG");
+                background-image: url(images/profs/icone-hover/cam2.JPG);
             }
         }
         &:nth-child(3) {
-            background-image: url("/images/profs/icone/car1.JPG");
+            background-image: url(images/profs/icone/car1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/car2.JPG");
+                background-image: url(images/profs/icone-hover/car2.JPG);
             }
         }
         &:nth-child(4) {
-            background-image: url("/images/profs/icone/dav1.JPG");
+            background-image: url(images/profs/icone/dav1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/dav2.JPG");
+                background-image: url(images/profs/icone-hover/dav2.JPG);
             }
         }
         &:nth-child(5) {
-            background-image: url("/images/profs/icone/den1.JPG");
+            background-image: url(images/profs/icone/den1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/den2.JPG");
+                background-image: url(images/profs/icone-hover/den2.JPG);
             }
         }
         &:nth-child(6) {
-            background-image: url("/images/profs/icone/dom1.JPG");
+            background-image: url(images/profs/icone/dom1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/dom2.JPG");
+                background-image: url(images/profs/icone-hover/dom2.JPG);
             }
         }
         &:nth-child(7) {
-            background-image: url("/images/profs/icone/edd1.JPG");
+            background-image: url(images/profs/icone/edd1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/edd2.JPG");
+                background-image: url(images/profs/icone-hover/edd2.JPG);
             }
         }
         &:nth-child(8) {
-            background-image: url("/images/profs/icone/gre1.JPG");
+            background-image: url(images/profs/icone/gre1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/gre2.JPG");
+                background-image: url(images/profs/icone-hover/gre2.JPG);
             }
         }
         &:nth-child(9) {
-            background-image: url("/images/profs/icone/joh1.JPG");
+            background-image: url(images/profs/icone/joh1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/joh2.JPG");
+                background-image: url(images/profs/icone-hover/joh2.JPG);
             }
         }
         &:nth-child(10) {
-            background-image: url("/images/profs/icone/man1.JPG");
+            background-image: url(images/profs/icone/man1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/man2.JPG");
+                background-image: url(images/profs/icone-hover/man2.JPG);
             }
         }
         &:nth-child(11) {
-            background-image: url("/images/profs/icone/mar1.JPG");
+            background-image: url(images/profs/icone/mar1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/mar2.JPG");
+                background-image: url(images/profs/icone-hover/mar2.JPG);
             }
         }
         &:nth-child(12) {
-            background-image: url("/images/profs/icone/mat1.JPG");
+            background-image: url(images/profs/icone/mat1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/mat2.JPG");
+                background-image: url(images/profs/icone-hover/mat2.JPG);
             }
         }
         &:nth-child(13) {
-            background-image: url("/images/profs/icone/ste1.JPG");
+            background-image: url(images/profs/icone/ste1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/ste2.JPG");
+                background-image: url(images/profs/icone-hover/ste2.JPG);
             }
         }
         &:nth-child(14) {
-            background-image: url("/images/profs/icone/vin1.JPG");
+            background-image: url(images/profs/icone/vin1.JPG);
             &:hover {
-                background-image: url("/images/profs/icone/vin2.JPG");
+                background-image: url(images/profs/icone-hover/vin2.JPG);
             }
-        } */
+        }
     }
 }
 
