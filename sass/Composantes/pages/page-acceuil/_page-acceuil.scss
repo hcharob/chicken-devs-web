@@ -37,8 +37,11 @@
 
                             overflow: hidden;
 
+                            display: flex;
+                            flex-direction: column;
+                            justify-content:space-around;
+
                             background-image: url(images/cercle_twirly.png);
-                            background-size: 200%;
                             background-position: right 35% bottom 15%;
                             background-repeat: no-repeat;
                             overflow: hidden;
@@ -64,6 +67,9 @@
                                         color: $couleur_mauveSecondaire;
                                     }
                                 }
+                            }
+                            .button{
+                                margin-left: 20%;
                             }
                         }
                     }

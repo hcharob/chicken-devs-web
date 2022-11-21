@@ -29,7 +29,7 @@
                             </svg>
                         </div>
                         <div class="button">
-                            <?php get_template_part('composantes/template','buttonLong');?>
+                            <?php get_template_part('composantes/template','buttonLong', array('Texte'	=> 'value', 'Link'	=> 'value2'));?>
                         </div>
                     </div>
                 </div>

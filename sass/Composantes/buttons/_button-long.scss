@@ -21,24 +21,4 @@ input{
   
 .Long_Button:hover{
     clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 10% 50%);
-    animation: 0.2s button ;
 }
-
-.Small_Button{
-    padding: 1em 1.3em;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    
-
-}
-  
-@keyframes button {
-    0% { clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%); }
-    60% { clip-path: polygon(12% 0, 90% 0, 100% 50%, 90% 100%, 12% 100%, 12% 50%); }
-    100% {clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 10% 50%);}
-}
-
-.fleche_bas{
-    fill: green;
-    width:7vw;
-}
-
