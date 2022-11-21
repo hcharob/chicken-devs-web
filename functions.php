@@ -28,6 +28,17 @@ function cidw_5w5_register_nav_menu(){
 }
 add_action( 'after_setup_theme', 'cidw_5w5_register_nav_menu', 0 );
 
+//-------------------------------------------------------
+/* -----------------------------------------------------------   add_theme_support() */
+function cidw_5w5_add_theme_support()
+{
+    add_theme_support('post-thumbnails');
+
+    add_theme_support( 'custom-logo');
+}
+ 
+add_action( 'after_setup_theme', 'cidw_5w5_add_theme_support' );
+
 /*---------------------------------------------------------- Enregistrement des widget */
 /**
  * Register our sidebars and widgetized areas.
