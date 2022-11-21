@@ -507,6 +507,7 @@ COMPOSANTES
 .site__footer .site__footer__conteneur .footer__titre .titre_college {
   text-transform: none;
   font-size: 1.5rem;
+  margin-top: -2vh;
 }
 
 .site__footer .site__footer__conteneur .footer__titre__principal {
@@ -548,10 +549,6 @@ COMPOSANTES
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.site__footer .site__footer__conteneur .wp-block-image img {
-  margin-top: -1rem;
 }
 
 .site__footer .site__footer__conteneur .site__footer__credit {
@@ -778,7 +775,7 @@ body ::-webkit-scrollbar-thumb:active {
   align-items: center;
 }
 
-.formation a {
+.formation a, .formation h3 {
   font-family: bebas-neue-pro, sans-serif;
   letter-spacing: 0.1em;
 }
@@ -875,9 +872,6 @@ body ::-webkit-scrollbar-thumb:active {
 
 .conteneurCours h3 {
   font-size: clamp(1rem, 0.1389rem + 1.5556vw, 1.5rem);
-}
-
-.conteneurCours h3 a {
   color: #F2F2F2;
 }
 
@@ -942,6 +936,63 @@ body ::-webkit-scrollbar-thumb:active {
     width: 42vw;
     justify-content: center;
   }
+}
+
+.boite__modale, .boite__carrousel {
+  position: fixed;
+  z-index: 3;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  background-color: blue;
+}
+
+.boite__modale--ouvrir, .boite__carrousel--ouvrir {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.boite__modale.ouvrir, .boite__carrousel.ouvrir {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.boite__modale__ferme, .boite__carrousel__ferme {
+  border: 0px;
+  text-align: center;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  background-color: #A663FF;
+  color: white;
+  font-family: montserrat, sans-serif;
+}
+
+/* Les dimensions de la boite modale */
+.boite__modale {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 414px) {
+  .boite__modale {
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    border-radius: 15px;
+  }
+}
+
+.boite__modale__texte {
+  padding: 4%;
+  line-height: 1.5rem;
+  overflow: hidden;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
 }
 
 input {

@@ -33,6 +33,7 @@
            .titre_college {
                 text-transform: none;
                 font-size: 1.5rem;
+                margin-top: -2vh;
             }
         }
 
@@ -81,9 +82,7 @@
             }
         }
 
-        .wp-block-image img {
-            margin-top: -1rem;
-        }
+        
 
         // ----------------------------- Style de la colonne des crédits
         .site__footer__credit {

@@ -14,9 +14,7 @@
 <div class="conteneurContour">
     <div class="conteneurCours">
         <h3 class="cours__titre">
-            <a href="<?php echo get_permalink(); ?>">
                 <?= $titreFiltreCours; ?>
-            </a> 
         </h3>
         <p class="cours__sigle"><?= $sigleCours; ?> </p>
         <!-- <p class="cours__desc"><?=wp_trim_words($descCours, 12, " <button class='cours__desc__bouton'>...</button>"); ?></p>

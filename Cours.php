@@ -43,7 +43,7 @@
                                 array(
                                     "taxonomy" => "category",
                                     "field"    => "slug",
-                                    "terms"    => array("session-1","session-2"), //permet d'afficher les cours de certaines catégories
+                                    "terms"    => array("session-1"), //permet d'afficher les cours de certaines catégories
                                 )
                             ),
                             "orderby"          => "none", // l'ordre duh
