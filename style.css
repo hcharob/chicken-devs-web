@@ -1435,24 +1435,80 @@ body .logo_tim {
   box-shadow: 0px 2px 10px black;
 }
 
-.site__main__acceuil .pages__sections .section1 {
+.section1 {
   z-index: 4;
+  background-color: #222426;
 }
 
-.site__main__acceuil .pages__sections .section1 .hoverPannel__conteneur {
+.section1 .hoverPannel__conteneur {
   width: 100%;
   height: 100%;
   filter: drop-shadow(black 2px 2px 10px);
 }
 
-.site__main__acceuil .pages__sections .section1 .hoverPannel__conteneur .hoverPannel__contour {
+.section1 .hoverPannel__conteneur .hoverPannel__contour {
+  width: 100%;
+  height: 100%;
+  background-color: #32353B;
+  clip-path: polygon(0% 0%, 100% 0, 60% 49%, 100% 100%, 0% 100%);
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url(images/cercle_twirly.png);
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre {
+  width: 50%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  filter: drop-shadow(black 2px 2px 10px);
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
+  font-size: clamp(2.5rem, 2.5vw, 3rem);
+  font-family: bebas-neue-pro, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: #F2F2F2;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre span {
+  color: #A663FF;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .projets__barre {
+  margin-left: 0;
+}
+
+.section2 {
+  z-index: 3;
+}
+
+.section2 .hoverPannel__conteneur {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(black 2px 2px 10px);
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour {
   width: 100%;
   height: 100%;
   background-color: #292d32;
   clip-path: polygon(0 0, 100% 0, 30% 100%, 0% 100%);
 }
 
-.site__main__acceuil .pages__sections .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain {
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -1465,7 +1521,7 @@ body .logo_tim {
   overflow: hidden;
 }
 
-.site__main__acceuil .pages__sections .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre {
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre {
   width: 50%;
   height: 30%;
   display: flex;
@@ -1475,7 +1531,7 @@ body .logo_tim {
   filter: drop-shadow(black 2px 2px 10px);
 }
 
-.site__main__acceuil .pages__sections .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
   font-size: clamp(2.5rem, 2.5vw, 3rem);
   font-family: bebas-neue-pro, sans-serif;
   text-transform: uppercase;
@@ -1483,24 +1539,137 @@ body .logo_tim {
   color: #F2F2F2;
 }
 
-.site__main__acceuil .pages__sections .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre span {
-  color: #A663FF;
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre span {
+  color: #FF207A;
 }
 
-.site__main__acceuil .pages__sections .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .projets__barre {
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .projets__barre {
   margin-left: 0;
 }
 
-.site__main__acceuil .pages__sections .section2 {
-  z-index: 3;
-}
-
-.site__main__acceuil .pages__sections .section3 {
+.section3 {
+  position: relative;
   z-index: 2;
 }
 
-.site__main__acceuil .pages__sections .section4 {
-  z-index: 1;
+.section3 .hoverPannel__conteneur {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(black 2px 2px 10px);
+}
+
+.section3 .hoverPannel__conteneur .hoverPannel__contour {
+  width: 100%;
+  height: 100%;
+  background-color: #292d32;
+  clip-path: polygon(100% 0%, 0 0, 0% 100%);
+}
+
+.section3 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url(images/cercle_twirly.png);
+  background-position: right 35% bottom 15%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.section3 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre {
+  width: 50%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  filter: drop-shadow(black 2px 2px 10px);
+}
+
+.section3 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
+  font-size: clamp(2.5rem, 2.5vw, 3rem);
+  font-family: bebas-neue-pro, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: #F2F2F2;
+}
+
+.section3 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre span {
+  color: #A663FF;
+}
+
+.section3 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .projets__barre {
+  margin-left: 0;
+}
+
+.section3 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre:hover > .hoverPannel__contour {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.section3 .hoverPannel__conteneur2 {
+  transition: all 0.3s ease-out;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(black 2px 2px 10px);
+}
+
+.section3 .hoverPannel__conteneur2 .hoverPannel__contour {
+  transition: all 0.3s ease-out;
+  width: 100%;
+  height: 100%;
+  background-color: #222426;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+}
+
+.section3 .hoverPannel__conteneur2 .hoverPannel__contour .hoverPannel__contain {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url(images/cercle_twirly.png);
+  background-position: right 35% bottom 15%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.section3 .hoverPannel__conteneur2 .hoverPannel__contour .hoverPannel__contain .box__titre {
+  float: right;
+  width: 50%;
+  height: 30%;
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  filter: drop-shadow(black 2px 2px 10px);
+}
+
+.section3 .hoverPannel__conteneur2 .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
+  font-size: clamp(2.5rem, 2.5vw, 3rem);
+  font-family: bebas-neue-pro, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: #F2F2F2;
+}
+
+.section3 .hoverPannel__conteneur2 .hoverPannel__contour .hoverPannel__contain .box__titre .titre span {
+  color: #A663FF;
+}
+
+.section3 .hoverPannel__conteneur2 .hoverPannel__contour .hoverPannel__contain .box__titre .projets__barre {
+  margin-left: 0;
+}
+
+.section3 .hoverPannel__conteneur2:hover .hoverPannel__contour {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .showcase {
