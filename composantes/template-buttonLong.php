@@ -1,3 +1,1 @@
-<input class="Long_Button" type="button" value="Action button"
-
-/>
+<input class="Long_Button" type="button" value="Action button"/>

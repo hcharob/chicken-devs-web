@@ -1,4 +1,4 @@
-input{
+.Long_Button{
     background-color: #A663FF;
     text-decoration: none;
     cursor: pointer;
@@ -6,9 +6,9 @@ input{
     text-align: center;
     display: inline-block;
     border: none;
-}
+    width: 20%;
+    height: 10%;
 
-.Long_Button{
     clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
     color: white;
     padding: 1em 2em;
