@@ -4,7 +4,7 @@
                     <div class="hoverPannel__contain">
                         <div class="box__titre">
                             <h2 class="titre">
-                            <?php echo get_field('section_h1') ?> <span>Adaptative</span>
+                            <?php echo get_field('section_h1')?><br><span><?php echo get_field('section_h1_span')?></span>
                             </h2>
                             <svg class="projets__barre" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.41 26.71">
                                 <defs>
@@ -22,8 +22,10 @@
                                     transform="translate(109.04 -236.55) rotate(45)" />
                             </svg>
                         </div>
-                        <a class="Long_Button" href="<?php echo get_permalink(); ?>">
-                            <?php echo get_field('section_button_text') ?>
+                        <a class="button_wrap" href="<?php echo get_permalink(); ?>">
+                            <div class="Long_Button">
+                                <?php echo get_field('section_button_text') ?>
+                            </div>
                         </a>
                     </div>
                 </div>
