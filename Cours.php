@@ -5,7 +5,11 @@
 
 <main class="site__main">
     <section class="formation">
-        <h2 class="formation__titre">Liste des cours du programme TIM</h2>
+        <div class="gradient__conteneur">
+            <div class="conteneur__titre">
+                <h2 class="formation__titre">LISTE DES COURS DU PROGRAMME TIM</h2>
+            </div>
+        </div>
         
         <?php wp_nav_menu(array(
             "menu" => "categorie_cours",
@@ -13,6 +17,23 @@
         )) ?>
         
         <div class="formation__conteneur" style="--n: <?php echo $cat_count -> count ?>">
+            <div class="dropdown">
+                <button class="dropbtn">Session</button>
+                <div class="dropdown-content">
+                    <?php wp_nav_menu(array(
+                        "menu" => "categorie_cours",
+                        "container_class" => "listeSessionDropdown"
+                    )) ?>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                </div>
+            </div>
             <div id="myDIV" class="formation__liste">
                     <?php 
                         $args = array(
@@ -22,7 +43,7 @@
                                 array(
                                     "taxonomy" => "category",
                                     "field"    => "slug",
-                                    "terms"    => "session-5", //permet d'afficher les cours de certaines catégories
+                                    "terms"    => array("session-1"), //permet d'afficher les cours de certaines catégories
                                 )
                             ),
                             "orderby"          => "none", // l'ordre duh
@@ -40,7 +61,6 @@
                         {
                             get_template_part('gabarits/cour');
                         } 
-                        
                     ?>
                     
             </div>
