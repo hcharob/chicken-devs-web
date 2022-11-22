@@ -1,4 +1,4 @@
-<section class="pages__sections__section section1">
+        <section class="pages__sections__section section1">
             <div class="hoverPannel__conteneur">   
                 <div class="hoverPannel__contour">
                     <div class="hoverPannel__contain">

@@ -1079,6 +1079,12 @@ body .logo_tim {
   background-position: center;
   background-size: cover;
   animation: neon alternate 2s forwards infinite ease;
+  /*&:nth-child(even) {
+
+            &:hover {
+                margin-bottom: -2.5vh;
+            }
+        }*/
 }
 
 .profs_choix:hover {
@@ -1086,12 +1092,6 @@ body .logo_tim {
   border: 1vh solid #FF207A;
   border-left: none;
   border-right: none;
-}
-
-.profs_choix:nth-child(even) {
-  /* &:hover {
-                margin-bottom: -2.5vh;
-            } */
 }
 
 .profs_choix:nth-child(odd) {
