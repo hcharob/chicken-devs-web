@@ -16,6 +16,13 @@ function cidw_5w5_enqueue(){
 
     wp_enqueue_script('cidw-5w5-nav-opacity');
 
+    wp_register_script('cidw-5w5-carrousel-gallerie', 
+        get_template_directory_uri() . '/javascript/carrousel-gallerie.js',
+        array(),
+        filemtime(get_template_directory() . '/javascript/carrousel-gallerie.js'),
+        true);
+    wp_enqueue_script('cidw-5w5-carrousel-gallerie');
+
 }
 
 add_action("wp_enqueue_scripts", "cidw_5w5_enqueue");
@@ -54,6 +61,56 @@ function my_register_widgets() {
 		'before_title'  => '<h2 class="rounded">',
 		'after_title'   => '</h2>',
 	) );
+    
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_1',
+            'name'          => __( 'Pied de page colonne 1' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_2',
+            'name'          => __( 'Pied de page colonne 2' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_3',
+            'name'          => __( 'Pied de page colonne 3' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'pied_page_colonne_4',
+            'name'          => __( 'Pied de page colonne 4' ),
+            'description'   => __( 'Colonne de pied de page' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+
+    /* Repeat register_sidebar() code for additional sidebars. */
 
 }
 add_action( 'widgets_init', 'my_register_widgets' );

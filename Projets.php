@@ -21,70 +21,38 @@
                 <rect class="cls-1" x="331.62" y="4.91" width="16.89" height="16.89"
                     transform="translate(109.04 -236.55) rotate(45)" />
             </svg>
-        </div>
-        <!-- <svg class="projets__fleche-scroll" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.45 20.77">
-            <defs>
-                <style>
-                    .cls-1 {
-                        fill: none;
-                        stroke: #a663ff;
-                        stroke-miterlimit: 10;
-                        stroke-width: 2px;
-                    }
-                </style>
-            </defs>
-            <g>
-                <line class="cls-1" x1="113.41" y1="10.38" x2="19.44" y2="10.38" />
-                <rect class="cls-1" x="4.04" y="4.04" width="12.69" height="12.69"
-                    transform="translate(10.38 25.07) rotate(-135)" />
-            </g>
-            <polyline class="cls-1" points="107.84 4.6 114.03 10.79 107.84 16.99" />
-        </svg> -->
+        </div>   
+        <?php 
+                        $args = array(
+                            "posts_per_page"   => -1, //This parameter defines the number of posts to return. Use -1 if you want all the posts.
+                            "paged"            => 1, // Allows us to navigate between a set of posts while using the posts_per_page parameter. It is used for pagination. For example: suppose posts_per_page is 10 and there are 20 posts in the result, then if you assign paged to 2 then last 10 posts are returned.
+                            "tax_query" => array(
+
+                                array(
+                                    "taxonomy" => "category",
+                                    "field"    => "slug",
+                                    "terms"    => "Projets-etudiants", //permet d'afficher les cours de certaines catégories
+                                )
+                            ),
+                            "orderby"          => "none", // l'ordre duh
+                            "order"            => "DESC", // ASC ou DESC
+                            "exclude"          => "", //mettre les post ID de ceux qu'on veux enlever
+                            "meta_key"         => "", 
+                            "meta_value"       => "",
+                            "post_type"        => "post", // Retrieves content based on post, page or custom post type.
+                            "post_status"      => "publish" //“publish”, “pending”, “draft”, “future”, “any” or “trash”.
+                    );
+        ?>
+        
+        <!-- Scroll des projets édutiants -->
         <section class="scroll__projets">
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">1
-                    </div>
-                </div>
-            </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">2
-                    </div>
-                </div>
-            </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">3
-                    </div>
-                </div>
-            </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">4
-                    </div>
-                </div>
-            </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">5
-                    </div>
-                </div>
-            </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">6
-                    </div>
-                </div>
-            </div>
-            <div class="conteneur">
-                <div class="contour">
-                    <div class="forme">7
-                    </div>
-                </div>
-            </div>
-            
+        <?php
+            $posts_array = get_posts($args); 
+            foreach($posts_array as $post)
+            {  
+                get_template_part('gabarits/projet'); 
+            } 
+        ?>
         </section>
-    </section>
 </main>
 <?php get_footer() ?>
