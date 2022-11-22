@@ -60,8 +60,8 @@
         background: linear-gradient(180deg, 
         rgba(0,0,0,0) 0%, 
         rgba(0,0,0,0) 45%, 
-        rgba(255,32,122,1) 50%, 
-        rgba(255,32,122,1) 75%, 
+        $couleur_rosePrimaire 50%, 
+        $couleur_mauvePrimaire 75%, 
         rgba(0,0,0,0) 80%, 
         rgba(0,0,0,0) 100%);
     }

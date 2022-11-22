@@ -1067,7 +1067,7 @@ body .logo_tim {
   justify-content: space-around;
   align-items: center;
   margin-bottom: -7.5vh;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, #ff207a 50%, #ff207a 75%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, #FF207A 50%, #6D42A6 75%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
 }
 
 .profs_choix {
