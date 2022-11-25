@@ -35,8 +35,33 @@ function cidw_5w5_register_nav_menu(){
 }
 add_action( 'after_setup_theme', 'cidw_5w5_register_nav_menu', 0 );
 
-function my_register_sidebars() {
-    /* Register the 'primary' sidebar. */
+//-------------------------------------------------------
+/* -----------------------------------------------------------   add_theme_support() */
+function cidw_5w5_add_theme_support()
+{
+    add_theme_support('post-thumbnails');
+
+    add_theme_support( 'custom-logo');
+}
+ 
+add_action( 'after_setup_theme', 'cidw_5w5_add_theme_support' );
+
+/*---------------------------------------------------------- Enregistrement des widget */
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function my_register_widgets() {
+
+	register_sidebar( array(
+		'name'          => 'home video banner',
+		'id'            => 'home_video_banner',
+		'before_widget' => '<div class="videoBanner">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+    
     register_sidebar(
         array(
             'id'            => 'pied_page_colonne_1',
@@ -86,6 +111,7 @@ function my_register_sidebars() {
     );
 
     /* Repeat register_sidebar() code for additional sidebars. */
+
 }
-add_action( 'widgets_init', 'my_register_sidebars' );
+add_action( 'widgets_init', 'my_register_widgets' );
 ?>

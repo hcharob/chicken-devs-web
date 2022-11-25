@@ -40,12 +40,22 @@ COMPOSANTES
 @import "composantes/header";
 @import "composantes/footer";
 
+@import "composantes/buttons/drop-down-button";
+
 @import "composantes/galerie";
 @import "composantes/modale";
 
 @import "composantes/pages/projets";
+@import "composantes/pages/contact";
 @import "composantes/pages/page-cours/hexagone";
 @import "composantes/pages/page-cours/listeSession";
+
+@import "composantes/pages/page-acceuil/page-acceuil";
+@import "composantes/pages/page-acceuil/previewSectionContact";
+@import "composantes/pages/page-acceuil/previewSectionProject";
+@import "composantes/pages/page-acceuil/previewSectionCours";
+@import "composantes/pages/page-acceuil/banner-video";
+
 
 @import "composantes/buttons/button-long";
 

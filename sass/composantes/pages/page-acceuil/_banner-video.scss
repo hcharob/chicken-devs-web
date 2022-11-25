@@ -1,0 +1,45 @@
+.showcase{
+    position: relative;
+    width: 100vw;
+    max-height: 100Vh;
+
+    background-image: url(images/Background.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    .videoBanner{
+        opacity: 20%;
+    }
+    .showcase__conteneur{
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        .showcase__contain{
+            width: 50%;
+            height: 50%;
+            margin-left: 15%;
+            margin-top: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .showcase__logo{
+                height: 50%;
+                background-image: url(images/tim-logo.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .showcase__titre{
+                font-size: clamp(2.5rem, 2.5vw, 3rem);
+                font-family: $police_titre;
+                text-transform: uppercase;
+                letter-spacing: 0.4rem;
+                color: $couleur_blanc;
+            }
+        }
+    }
+}
