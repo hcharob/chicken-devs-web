@@ -1,4 +1,4 @@
-        <section class="pages__sections__section section2">
+        <section class="pages__sections__section section1">
             <div class="hoverPannel__conteneur">   
                 <div class="hoverPannel__contour">
                     <div class="hoverPannel__contain">
@@ -14,7 +14,6 @@
                                             stroke: #a663ff;
                                             stroke-miterlimit: 10;
                                             stroke-width: 2px;
-                                            color: $couleur_rosePrimaire;
                                         }
                                     </style>
                                 </defs>
