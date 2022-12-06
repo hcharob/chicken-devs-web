@@ -1,5 +1,5 @@
 // ----------------------------- Style du titre                                 
-.boite__carrousel {
+.boite__modale, .boite__carrousel {
     position : fixed;
     z-index: 3;
     transform : scale(0);
@@ -17,65 +17,74 @@
         transform : scale(1);
         opacity: 1;
     }
-
-    .boite__carrousel__ferme{
-        border: 0px;
-        text-align: center;
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        top: 5%;
-        left: 50%;
-        clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
-        z-index: 1;
-        background-color: $couleur_noir;
-        color: white;
-        font-family: $police_texte;   
-    }
-    .boite__carrousel__left{
-        border: 0px;
-        text-align: center;
-        position: absolute;
-        width: 5%;
-        height: 100%;
-        right: 0px;
-        z-index: 1;
-        background-color: $couleur_mauveSecondaire;
-        color: white;
-        font-family: $police_texte;   
-    }
-    .boite__carrousel__right{
-        border: 0px;
-        text-align: center;
-        position: absolute;
-        width: 5%;
-        height: 100%;
-        left: 0px;
-        z-index: 1;
-        background-color: $couleur_mauveSecondaire;
-        color: white;
-        font-family: $police_texte;   
-    }
 }
 
 
 /* Les dimensions de la boite carrousel */
 .boite__carrousel{
-
-    top: 2.5%;
-    left: 2.5%;
-    width: 43vw;
-    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    top: 0%;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
-    @media screen and (min-width : $largeur__media--tablette) {   
-        top: 12.5%;
-        left: 12.5%;
-    }
     .boite__carrousel__contour{
-        width: 43vw;
+        position: relative;
+        margin-top: 20vh;
+        width: 100%;
         aspect-ratio: 1/1;
         clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
         background: linear-gradient(135deg, $couleur_rosePrimaire 0%, $couleur_mauvePrimaire 100%);
+        @media screen and (min-width : $largeur__media--tablette) {
+            margin-top: 0;
+            width: 70vh;
+            height: 70vh;
+            max-width: 100vw;
+            max-height: 100vw;
+            top: 10vh;
+        }
+
+        .boite__carrousel__ferme{
+            border: 0px;
+            text-align: center;
+            align-items: center;
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            top: 5%;
+            left: 45%;
+            clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
+            z-index: 1;
+            background-color: $couleur_noir;
+            color: white;
+            font-family: $police_texte;   
+        }
+        .boite__carrousel__left{
+            border: 0px;
+            text-align: center;
+            position: absolute;
+            width: 5%;
+            height: 100%;
+            right: 0px;
+            z-index: 1;
+            background-color: $couleur_noir;
+            color: white;
+            font-family: $police_texte;   
+        }
+        .boite__carrousel__right{
+            border: 0px;
+            text-align: center;
+            position: absolute;
+            width: 5%;
+            height: 100%;
+            left: 0px;
+            z-index: 1;
+            background-color: $couleur_noir;
+            color: white;
+            font-family: $police_texte;   
+        }
 
         .boite__carrousel__img { // conteneur d'img  .boite__carrousel__img
             clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
@@ -122,3 +131,79 @@
     }
 }    
 /* fin .boite__carrousel */
+/* Les dimensions de la boite modale */
+.cours__desc{
+    display: none;
+}
+.boite__modale{
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+    filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
+    &__ferme{
+        border: 0px;
+        text-align: center;
+        align-items: center;
+        position: absolute;
+        width: 20%;
+        height: 50px;
+        left: 40%;
+        clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
+        z-index: 1;
+        background-color: $couleur_mauvePrimaire;
+        color: white;
+        font-family: $police_texte; 
+        @media screen and (min-width : $largeur__media--tablette){ 
+                left: 47%;
+                width: 6%;
+                top: 5%;
+            }  
+    }
+   
+    &__texte{
+        background-color: $couleur_noirFonce;
+        padding: 1%;
+        padding-top: 10%;
+        line-height: 1.5rem;
+        overflow: hidden;
+        font-size: clamp(0.9rem, 1vw, 1.2rem);
+        width: 100%;
+        height: 90%;
+
+        .cours__desc{
+            text-align:justify;
+            display: block;
+            padding: 7%;
+            padding-top: 10%;
+            max-height: 70%;
+            font-size: clamp(0.55rem, 1vh, 1rem);
+        }
+        @media screen and (min-width : $largeur__media--tablette){
+            .cours__desc{
+                padding: 20%;
+                padding-top: 5%;
+            }
+
+            top:5%;
+            width: 70vh;
+            height: 70vh;
+            max-width: 100vw;
+            max-height: 100vw;
+            aspect-ratio: 1/1;
+            clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        }
+        @media screen and (min-width : $largeur__media--desktop){
+            top:5%;
+            width: 70vh;
+            height: 70vh;
+            max-width: 100vw;
+            max-height: 100vw;
+            aspect-ratio: 1/1;
+            clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        }
+    }
+}

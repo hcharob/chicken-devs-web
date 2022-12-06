@@ -660,7 +660,7 @@ COMPOSANTES
   border-radius: 5px !important;
 }
 
-.boite__carrousel {
+.boite__modale, .boite__carrousel {
   position: fixed;
   z-index: 3;
   transform: scale(0);
@@ -668,24 +668,57 @@ COMPOSANTES
   transition: all 1s ease-in-out;
 }
 
-.boite__carrousel--ouvrir {
+.boite__modale--ouvrir, .boite__carrousel--ouvrir {
   transform: scale(1);
   opacity: 1;
 }
 
-.boite__carrousel.ouvrir {
+.boite__modale.ouvrir, .boite__carrousel.ouvrir {
   transform: scale(1);
   opacity: 1;
 }
 
-.boite__carrousel .boite__carrousel__ferme {
+/* Les dimensions de la boite carrousel */
+.boite__carrousel {
+  display: flex;
+  flex-direction: column;
+  top: 0%;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
+}
+
+.boite__carrousel .boite__carrousel__contour {
+  position: relative;
+  margin-top: 20vh;
+  width: 100%;
+  aspect-ratio: 1/1;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
+}
+
+@media screen and (min-width: 414px) {
+  .boite__carrousel .boite__carrousel__contour {
+    margin-top: 0;
+    width: 70vh;
+    height: 70vh;
+    max-width: 100vw;
+    max-height: 100vw;
+    top: 10vh;
+  }
+}
+
+.boite__carrousel .boite__carrousel__contour .boite__carrousel__ferme {
   border: 0px;
   text-align: center;
+  align-items: center;
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 10%;
+  height: 10%;
   top: 5%;
-  left: 50%;
+  left: 45%;
   clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
   z-index: 1;
   background-color: #32353B;
@@ -693,7 +726,7 @@ COMPOSANTES
   font-family: montserrat, sans-serif;
 }
 
-.boite__carrousel .boite__carrousel__left {
+.boite__carrousel .boite__carrousel__contour .boite__carrousel__left {
   border: 0px;
   text-align: center;
   position: absolute;
@@ -701,12 +734,12 @@ COMPOSANTES
   height: 100%;
   right: 0px;
   z-index: 1;
-  background-color: #A663FF;
+  background-color: #32353B;
   color: white;
   font-family: montserrat, sans-serif;
 }
 
-.boite__carrousel .boite__carrousel__right {
+.boite__carrousel .boite__carrousel__contour .boite__carrousel__right {
   border: 0px;
   text-align: center;
   position: absolute;
@@ -714,32 +747,9 @@ COMPOSANTES
   height: 100%;
   left: 0px;
   z-index: 1;
-  background-color: #A663FF;
+  background-color: #32353B;
   color: white;
   font-family: montserrat, sans-serif;
-}
-
-/* Les dimensions de la boite carrousel */
-.boite__carrousel {
-  top: 2.5%;
-  left: 2.5%;
-  width: 43vw;
-  aspect-ratio: 1/1;
-  filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
-}
-
-@media screen and (min-width: 414px) {
-  .boite__carrousel {
-    top: 12.5%;
-    left: 12.5%;
-  }
-}
-
-.boite__carrousel .boite__carrousel__contour {
-  width: 43vw;
-  aspect-ratio: 1/1;
-  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-  background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
 }
 
 .boite__carrousel .boite__carrousel__contour .boite__carrousel__img {
@@ -789,6 +799,93 @@ COMPOSANTES
 }
 
 /* fin .boite__carrousel */
+/* Les dimensions de la boite modale */
+.cours__desc {
+  display: none;
+}
+
+.boite__modale {
+  display: flex;
+  flex-direction: column;
+  top: 10%;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 95%;
+  filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
+}
+
+.boite__modale__ferme {
+  border: 0px;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  width: 20%;
+  height: 50px;
+  left: 40%;
+  clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
+  z-index: 1;
+  background-color: #6D42A6;
+  color: white;
+  font-family: montserrat, sans-serif;
+}
+
+@media screen and (min-width: 414px) {
+  .boite__modale__ferme {
+    left: 47%;
+    width: 6%;
+    top: 5%;
+  }
+}
+
+.boite__modale__texte {
+  background-color: #222426;
+  padding: 1%;
+  padding-top: 10%;
+  line-height: 1.5rem;
+  overflow: hidden;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+  width: 100%;
+  height: 90%;
+}
+
+.boite__modale__texte .cours__desc {
+  text-align: justify;
+  display: block;
+  padding: 7%;
+  padding-top: 10%;
+  max-height: 70%;
+  font-size: clamp(0.55rem, 1vh, 1rem);
+}
+
+@media screen and (min-width: 414px) {
+  .boite__modale__texte {
+    top: 5%;
+    width: 70vh;
+    height: 70vh;
+    max-width: 100vw;
+    max-height: 100vw;
+    aspect-ratio: 1/1;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  }
+  .boite__modale__texte .cours__desc {
+    padding: 20%;
+    padding-top: 5%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .boite__modale__texte {
+    top: 5%;
+    width: 70vh;
+    height: 70vh;
+    max-width: 100vw;
+    max-height: 100vw;
+    aspect-ratio: 1/1;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  }
+}
+
 body {
   background-position: 70% 30%;
   /* Barre de scroll */
