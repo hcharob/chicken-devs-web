@@ -14,7 +14,7 @@
                                             stroke: #a663ff;
                                             stroke-miterlimit: 10;
                                             stroke-width: 2px;
-                                            color: $couleur_rosePrimaire;
+                                            color: #FF207A;
                                         }
                                     </style>
                                 </defs>

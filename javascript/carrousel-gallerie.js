@@ -16,7 +16,7 @@
   /* Conteneur d'image du carrousel */
   let boite__carrousel__img = document.querySelector(".boite__carrousel__img")
   /* La collection des images de la galerie */
-  let galerie__img = document.querySelectorAll('.forme');
+  let galerie__img = document.querySelectorAll('.wp-block-image img');
   
   /**
    * 
@@ -41,8 +41,6 @@
     img.dataset.index = index; // le numéro de l'image
     elmImg.setAttribute('src', img.getAttribute('src')) // la source de l'image (url de l'image)
     boite__carrousel__img.append(elmImg) // on ajoute l'élément img dans son conteneur
-
-
     /**
      * Creation des boutons de navigation du carrousel
      * 
@@ -68,14 +66,14 @@
      * Ouverture de la boite__carrousel
      */
 
-    img.addEventListener('click', function () {
+     img.closest('.forme').addEventListener('click', function () {
       //console.log(this.getAttribute('src'))
 
       boite__carrousel.classList.add('ouvrir')
       //console.log(boite__carrousel.classList)
       initialise__carrousel__img()
-      boite__carrousel__img.children[this.dataset.index].classList.add('img--ouvrir')  // on sélectionne l'image
-      boite__carrousel__navigation.children[this.dataset.index].checked = true // on sélectionne le radio bouton
+      boite__carrousel__img.children[img.dataset.index].classList.add('img--ouvrir')  // on sélectionne l'image
+      boite__carrousel__navigation.children[img.dataset.index].checked = true // on sélectionne le radio bouton
       //elmImg.setAttribute('src', this.getAttribute('src'))
 
     })
