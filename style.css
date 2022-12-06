@@ -1013,44 +1013,51 @@ body .logo_tim {
 
 .profs {
   display: flex;
-  height: 300vh;
-  width: 200vw;
   justify-content: center;
   align-items: center;
   transition: transform 0.5s;
-  /* &:has(.profs_choix:active) {
-        transform: translateX(-50%);
-    } */
-  /* &_texte-choix {
-        z-index: -1;
-        grid-column: 1 / 3;
-        grid-row: 2 / 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $couleur_blanc;
-        font-family: $police_titre;
-        font-size: 3rem;
-        text-align: center;
-        text-transform: uppercase;
-        text-shadow: 0 0 1rem $couleur_noirFonce;
+  padding-top: 15vh;
+  /* &_fond {
+        height: 20%;
+        background-image: url(images/profs/portrait/ahm3.JPG);
+        background-position: center;
+        background-size: cover;
         box-shadow: 0 0 1vw $couleur_noirFonce;
-        border: 1vw solid $couleur_rosePrimaire;
-        border-top: none;
-        border-bottom: none;
     } */
+}
+
+@media screen and (max-width: 414px) {
+  .profs {
+    height: 150vh;
+    width: 200vw;
+  }
+  .profs_canvas {
+    grid-template-columns: repeat(2, 1fr);
+    height: 150vh;
+    width: 200vw;
+  }
+  .profs_choix {
+    width: 25vw;
+  }
+  .profs_choix:nth-child(even) {
+    margin-right: -12.5vw;
+  }
+  .profs_choix:nth-child(odd) {
+    margin-left: -12.5vw;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .profs {
     height: 300vh;
-    width: 70vw;
-    padding-top: 12.5vh;
+    width: 150vw;
+    padding-top: 30vh;
     margin: 0 auto;
   }
   .profs_canvas {
+    grid-template-columns: 2fr 1fr;
     height: 300vh;
-    width: 70vw;
+    width: 150vw;
   }
   .profs_info_nom {
     font-size: 4rem;
@@ -1059,40 +1066,43 @@ body .logo_tim {
     font-size: 2rem;
     padding: 0 1vw;
   }
-  .profs_selection {
-    justify-content: flex-start;
-    align-items: flex-start;
-    /* background: linear-gradient(180deg, 
-            rgba(0,0,0,0) 0%, 
-            rgba(0,0,0,0) 45%, 
-            $couleur_rosePrimaire 50%, 
-            $couleur_mauvePrimaire 75%, 
-            rgba(0,0,0,0) 80%, 
-            rgba(0,0,0,0) 100%); */
-  }
   .profs_choix {
-    height: 25vh;
+    height: 20vh;
+  }
+  .profs_choix:nth-child(even) {
+    margin-right: -5vw;
   }
   .profs_choix:nth-child(odd) {
-    margin-left: 7.5vw;
+    margin-left: -5vw;
   }
+}
+
+.profs:has(.profs_choix:active) {
+  transform: translateX(-50%);
 }
 
 .profs_canvas {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 6fr;
-  height: 300vh;
-  width: 200vw;
+  grid-template-rows: 1fr;
+}
+
+.profs_case {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  display: flex;
+  /* & img {
+            height: 20%;
+        } */
 }
 
 .profs_info {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  height: 10%;
   background-color: #32353B;
-  border-left: 1vw solid #6D42A6;
   color: #F2F2F2;
   box-shadow: 0 0 1vw #222426;
+  position: sticky;
+  top: 60%;
+  border-right: 1vw solid #A663FF;
 }
 
 .profs_info_nom {
@@ -1105,21 +1115,20 @@ body .logo_tim {
   font-family: montserrat, sans-serif;
 }
 
-.profs_fond {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  border-right: 1vw solid #A663FF;
-  background-image: url(images/profs/portrait/ahm3.JPG);
-  background-position: center;
-  background-size: cover;
-  box-shadow: 0 0 1vw #222426;
-}
-
 .profs_selection {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(90deg, 
+            rgba(0,0,0,0) 0%, 
+            rgba(0,0,0,0) 45%, 
+            $couleur_rosePrimaire 47.5%, 
+            $couleur_mauvePrimaire 52.5%, 
+            rgba(0,0,0,0) 55%, 
+            rgba(0,0,0,0) 100%); */
 }
 
 .profs_choix {
