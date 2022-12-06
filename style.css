@@ -660,24 +660,90 @@ COMPOSANTES
   border-radius: 5px !important;
 }
 
+.boite__carrousel {
+  position: fixed;
+  z-index: 3;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.boite__carrousel--ouvrir {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.boite__carrousel.ouvrir {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.boite__carrousel .boite__carrousel__ferme {
+  border: 0px;
+  text-align: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 5%;
+  left: 50%;
+  clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
+  z-index: 1;
+  background-color: #32353B;
+  color: white;
+  font-family: montserrat, sans-serif;
+}
+
+.boite__carrousel .boite__carrousel__left {
+  border: 0px;
+  text-align: center;
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  right: 0px;
+  z-index: 1;
+  background-color: #A663FF;
+  color: white;
+  font-family: montserrat, sans-serif;
+}
+
+.boite__carrousel .boite__carrousel__right {
+  border: 0px;
+  text-align: center;
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  left: 0px;
+  z-index: 1;
+  background-color: #A663FF;
+  color: white;
+  font-family: montserrat, sans-serif;
+}
+
 /* Les dimensions de la boite carrousel */
 .boite__carrousel {
   top: 2.5%;
   left: 2.5%;
-  width: 95%;
-  height: 95%;
+  width: 43vw;
+  aspect-ratio: 1/1;
+  filter: drop-shadow(rgba(34, 36, 38, 0.5) 12px 12px 30px);
 }
 
 @media screen and (min-width: 414px) {
   .boite__carrousel {
     top: 12.5%;
     left: 12.5%;
-    width: 75%;
-    height: 75%;
   }
 }
 
-.boite__carrousel__img {
+.boite__carrousel .boite__carrousel__contour {
+  width: 43vw;
+  aspect-ratio: 1/1;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  background: linear-gradient(135deg, #FF207A 0%, #6D42A6 100%);
+}
+
+.boite__carrousel .boite__carrousel__contour .boite__carrousel__img {
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -687,7 +753,7 @@ COMPOSANTES
   height: 100%;
 }
 
-.boite__carrousel__img img {
+.boite__carrousel .boite__carrousel__contour .boite__carrousel__img img {
   position: absolute;
   top: 0;
   left: 0;
@@ -698,88 +764,31 @@ COMPOSANTES
   transition: all 1s;
 }
 
-.boite__carrousel__img img.img--ouvrir {
+.boite__carrousel .boite__carrousel__contour .boite__carrousel__img img.img--ouvrir {
   opacity: 1;
 }
 
-.boite__carrousel__navigation {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  bottom: 0;
-  z-index: 1;
-}
-
-.boite__carrousel__navigation .bouton {
-  width: 20px;
-  height: 20px;
-  margin: 20px 10px;
-  border-radius: 100%;
-}
-
-.boite__carrousel__navigation .bouton:focus {
-  background-color: black;
+.boite__carrousel .boite__carrousel__contour .boite__carrousel__navigation {
+  display: none;
+  /*padding:5%;
+            position : absolute;
+            display: flex;
+            justify-content: center;
+            width : 100%;
+            bottom: 0;
+            z-index:1;
+            .bouton {  // .boite__carrousel__navigation .bouton  (les boutons radio )
+                width : 20px;
+                height : 20px;
+                margin : 20px 10px;
+                border-radius: 100%;
+                &:focus {
+                    background-color: black;
+                }
+            }*/
 }
 
 /* fin .boite__carrousel */
-.boite__modale, .boite__carrousel {
-  position: fixed;
-  z-index: 3;
-  transform: scale(0);
-  opacity: 0;
-  transition: all 1s ease-in-out;
-  background-color: blue;
-}
-
-.boite__modale--ouvrir, .boite__carrousel--ouvrir {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.boite__modale.ouvrir, .boite__carrousel.ouvrir {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.boite__modale__ferme, .boite__carrousel__ferme {
-  border: 0px;
-  text-align: center;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-  background-color: #A663FF;
-  color: white;
-  font-family: montserrat, sans-serif;
-}
-
-/* Les dimensions de la boite modale */
-.boite__modale {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-}
-
-@media screen and (min-width: 414px) {
-  .boite__modale {
-    width: 50%;
-    height: 50%;
-    top: 25%;
-    left: 25%;
-    border-radius: 15px;
-  }
-}
-
-.boite__modale__texte {
-  padding: 4%;
-  line-height: 1.5rem;
-  overflow: hidden;
-  font-size: clamp(0.9rem, 1vw, 1.2rem);
-}
-
 body {
   background-position: 70% 30%;
   /* Barre de scroll */
