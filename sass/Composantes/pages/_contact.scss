@@ -51,10 +51,6 @@
             }
         }
 
-        &_fond {
-
-        }
-
         &_selection {
 
         }
@@ -77,6 +73,11 @@
     align-items: center;
     transition: transform 0.5s;
     padding-top: 15vh;
+    background: linear-gradient(0deg, 
+    rgba(0,0,0,0) 0%, 
+    rgba(50,53,59,0.5) 2.5%, 
+    rgba(50,53,59,0.5) 97.5%, 
+    rgba(0,0,0,0) 100%);
 
     &:has(.profs_choix:active) {
         transform: translateX(-50%);
@@ -91,19 +92,22 @@
         grid-column: 2 / 3;
         grid-row: 1;
         display: flex;
+    }
 
-        /* & img {
-            height: 20%;
-        } */
+    &_image {
+        height: 25%;
+        position: sticky;
+        top: 15%;
+        object-fit: cover;
     }
 
     &_info {
-        height: 10%;
+        height: 25%;
         background-color: $couleur_noir;
         color: $couleur_blanc;
         box-shadow: 0 0 1vw $couleur_noirFonce;
         position: sticky;
-        top: 60%;
+        top: 15%;
         border-right: 1vw solid $couleur_mauveSecondaire;
 
         &_nom {
@@ -117,14 +121,6 @@
         }
     }
 
-    /* &_fond {
-        height: 20%;
-        background-image: url(images/profs/portrait/ahm3.JPG);
-        background-position: center;
-        background-size: cover;
-        box-shadow: 0 0 1vw $couleur_noirFonce;
-    } */
-
     &_selection {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
@@ -132,6 +128,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         /* background: linear-gradient(90deg, 
             rgba(0,0,0,0) 0%, 
             rgba(0,0,0,0) 45%, 
