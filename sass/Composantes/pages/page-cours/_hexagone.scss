@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    a, h3{
+    a, h3, .cours__sigle{
         font-family: $police_titre;
         letter-spacing: 0.1em;
     } 
@@ -45,7 +45,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    --s:40vw;  /* size */
+    margin-top: 1rem;
+    --s:35vw;  /* size */
     --r: 1.15; /* height ratio */
     /* clip-path parameter */
     --hc: calc(var(--s) * 0.5); 
@@ -57,6 +58,8 @@
     width: 70vw;
     padding-bottom: 5rem;
 }
+
+
 
 .formation__liste { /*le conteneur des hexagones*/
     // width: calc((var(--s) * 3) + (var(--s)/2 + var(--mh)));
@@ -107,7 +110,7 @@
         
     }
     .cours__sigle{
-        font-size: unquote("clamp(0.9rem, 0.1389rem + 1.5556vw, 1.5rem)");
+        
         margin: 0;
         color: $couleur_blanc;
     }
@@ -134,8 +137,30 @@
     background: linear-gradient(135deg, $couleur_rosePrimaire 0%, $couleur_mauvePrimaire 100%);
 }
 
+@media (min-width:$largeur__media--tablette){
+    .conteneurCours{ //Tout ce qui est dans les hexagones
+        h3{
+            font-size: unquote("clamp(0.8rem, 0.0308rem + 3.0769vw, 2rem)");
+        }
+        .cours__sigle{
+            font-size: unquote("clamp(0.8rem, -0.0144rem + 3.1475vw, 2rem)");
+        }
+    }
+}
+
 @media (min-width:$largeur__media--desktop){
     .formation__conteneur{
         --s: 15vw;
     }
+
+    .conteneurCours{ //Tout ce qui est dans les hexagones
+        h3{
+            font-size: unquote("clamp(1.3rem, 0.7553rem + 0.8511vw, 1.5rem);");
+            
+        }
+        .cours__sigle{
+            font-size: unquote("clamp(1rem, 0.1389rem + 1.5556vw, 1.5rem)");
+        }
+    }
 }
+
