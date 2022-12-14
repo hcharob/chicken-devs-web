@@ -23,6 +23,13 @@ function cidw_5w5_enqueue(){
         true);
     wp_enqueue_script('cidw-5w5-carrousel-gallerie');
 
+    wp_register_script('cidw-5w5-scroll', 
+    get_template_directory_uri() . '/javascript/scroll.js',
+    array(),
+    filemtime(get_template_directory() . '/javascript/scroll.js'),
+    true);
+    wp_enqueue_script('cidw-5w5-scroll');
+
 }
 
 add_action("wp_enqueue_scripts", "cidw_5w5_enqueue");

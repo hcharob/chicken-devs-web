@@ -490,7 +490,7 @@ COMPOSANTES
 
 .site__footer .site__footer__conteneur {
   display: grid;
-  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
+  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
   padding: 1rem;
   gap: 1.5rem;
   font-family: montserrat, sans-serif;
@@ -785,6 +785,11 @@ body {
   /* Barre de scroll */
 }
 
+body .site__main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 body .projets__boite__titre {
   padding-left: 10vw;
   display: flex;
@@ -798,6 +803,7 @@ body .projets__titre {
   text-transform: uppercase;
   letter-spacing: 0.4rem;
   color: #F2F2F2;
+  text-shadow: 2px 2px 5px #222426;
 }
 
 body .projets__titre span {
@@ -838,10 +844,10 @@ body .contour {
 
 body .forme {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
   background: #32353B;
   background-size: cover;
   background-repeat: no-repeat;
@@ -891,17 +897,19 @@ body .overlay {
   height: 100%;
   width: 100%;
   transition: 0.3s;
+  background: rgba(34, 36, 38, 0.6);
+  padding: 3rem;
 }
 
 body .overlay:hover {
-  background: rgba(34, 36, 38, 0.9);
+  background: transparent;
 }
 
-body .overlay:hover .projet__titre {
-  opacity: 1;
+body .overlay:hover .titre__projet__etudiant {
+  opacity: 0;
 }
 
-body .projet__titre {
+body .titre__projet__etudiant {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -913,11 +921,12 @@ body .projet__titre {
   font-family: montserrat, sans-serif;
   font-size: clamp(0.55rem, 1vw, 1rem);
   color: #F2F2F2;
-  opacity: 0;
+  opacity: 1;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   line-height: 1.3em;
   text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 body .scroll__projets .conteneur:nth-of-type(1) {
@@ -972,13 +981,15 @@ body .logo_tim {
   margin-top: -1%;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 1024px) {
   /* Selectors and styles affecting screens WIDER THAN 767px (Tablet) */
   body {
     background-position: center;
   }
   body .scroll__projets {
     height: 70vh;
+    position: relative;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
@@ -986,11 +997,12 @@ body .logo_tim {
     overflow-x: scroll;
     overflow-y: hidden;
     padding-top: 22vh;
-    scroll-behavior: smooth;
+    white-space: nowrap;
   }
   body .contour {
     width: 18vw;
     aspect-ratio: 1/1;
+    min-width: 18vw;
   }
   body .scroll__projets .conteneur:nth-of-type(1) {
     padding-left: 25vw;
@@ -1450,7 +1462,6 @@ body .logo_tim {
   width: 100%;
   height: 100%;
   background-color: #32353B;
-  clip-path: polygon(0% 0%, 100% 0, 60% 49%, 100% 100%, 0% 100%);
 }
 
 .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain {
@@ -1459,13 +1470,16 @@ body .logo_tim {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-image: url(images/cercle_twirly.png);
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
 .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre {
+  position: relative;
+  top: 10%;
+  left: 5%;
   width: 50%;
   height: 30%;
   display: flex;
@@ -1491,6 +1505,78 @@ body .logo_tim {
   margin-left: 0;
 }
 
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .conteneur_projet {
+  filter: drop-shadow(rgba(34, 36, 38, 0.3) 12px 12px 30px);
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .contour_projet {
+  position: relative;
+  width: 16rem;
+  min-width: 10rem;
+  aspect-ratio: 1/1;
+  background: #ff207a;
+  background: linear-gradient(135deg, #ff207a 0%, #6d42a6 100%);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .forme_projet {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: #32353B;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .forme_projet {
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .forme:hover {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .conteneur_projet:first-of-type {
+  position: absolute;
+  top: 4rem;
+  left: 24rem;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .conteneur_projet:nth-of-type(2) {
+  position: absolute;
+  top: -3.5rem;
+  left: 36.5rem;
+}
+
+.section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .conteneur_projet:nth-of-type(3) {
+  position: absolute;
+  top: 4rem;
+  left: 49rem;
+}
+
 .section2 {
   z-index: 3;
 }
@@ -1505,7 +1591,6 @@ body .logo_tim {
   width: 100%;
   height: 100%;
   background-color: #292d32;
-  clip-path: polygon(0 0, 100% 0, 30% 100%, 0% 100%);
 }
 
 .section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain {
@@ -1522,6 +1607,10 @@ body .logo_tim {
 }
 
 .section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre {
+  z-index: 5;
+  position: relative;
+  top: 10%;
+  padding-top: 2vh;
   width: 50%;
   height: 30%;
   display: flex;
@@ -1545,6 +1634,102 @@ body .logo_tim {
 
 .section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .projets__barre {
   margin-left: 0;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 {
+  position: relative;
+  margin-top: -32vh;
+  padding-right: 1vw;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet {
+  filter: drop-shadow(rgba(34, 36, 38, 0.3) 12px 12px 30px);
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .contour_projet {
+  position: relative;
+  width: 9rem;
+  aspect-ratio: 1/1;
+  background: #ff207a;
+  background: linear-gradient(135deg, #ff207a 0%, #6d42a6 100%);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .forme_projet {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #32353B;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:first-of-type {
+  position: absolute;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(2) {
+  position: absolute;
+  top: 8.5rem;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(3) {
+  position: absolute;
+  top: 17rem;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(4) {
+  position: absolute;
+  top: 25.5rem;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(5) {
+  position: absolute;
+  top: 4.25rem;
+  right: 8.1rem;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(6) {
+  position: absolute;
+  top: 12.75rem;
+  right: 8.1rem;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(7) {
+  position: absolute;
+  top: 21.25rem;
+  right: 8.1rem;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(8) {
+  position: absolute;
+  top: 8.5rem;
+  right: 20rem;
+  transform: rotate(-12deg);
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(9) {
+  position: absolute;
+  top: 17rem;
+  right: 15.3rem;
+}
+
+.section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex2 .conteneur_projet:nth-of-type(10) {
+  position: absolute;
+  top: 20rem;
+  right: 32rem;
+  transform: rotate(-24deg);
 }
 
 .section3 {
@@ -1723,6 +1908,10 @@ body .logo_tim {
 
 .button_wrap {
   filter: drop-shadow(black 2px 2px 10px);
+  z-index: 20;
+  position: relative;
+  top: 15%;
+  left: -2%;
 }
 
 .button_wrap .Long_Button {

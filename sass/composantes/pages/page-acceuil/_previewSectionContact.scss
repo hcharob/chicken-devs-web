@@ -1,7 +1,6 @@
 .section1{
     z-index: 4;
     background-color: $couleur_noirFonce;
-
     .hoverPannel__conteneur{
         width: 100%;
         height:100%;
@@ -11,26 +10,24 @@
             width: 100%;
             height:100%;
             background-color: $couleur_noir;
-            clip-path: polygon(0% 0%, 100% 0, 60% 49%, 100% 100%, 0% 100%);
 
             .hoverPannel__contain{
                 width: 100%;
                 height:100%;
-
                 overflow: hidden;
-
                 display: flex;
                 flex-direction: column;
-                justify-content:space-around;
-
+                justify-content:space-evenly;
                 background-image: url(images/cercle_twirly.png);
                 background-repeat: no-repeat;
                 overflow: hidden;
 
                 .box__titre{
+                    position: relative;
+                    top: 10%;
+                    left: 5%;
                     width: 50%;
                     height: 30%;
-
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -49,6 +46,80 @@
                     }
                     .projets__barre{
                         margin-left: 0;
+                    }
+                }
+                
+                .GridHex1 {
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    // background-color: blue;
+
+                    .conteneur_projet {
+                        filter: drop-shadow(rgba(34, 36, 38, 0.3) 12px 12px 30px);
+                    }
+
+                    .contour_projet {
+                        position: relative;
+                        width: 16rem;
+                        min-width: 10rem;
+                        aspect-ratio: 1/1;
+                        background: rgb(255, 32, 122);
+                        background: linear-gradient(135deg, rgba(255, 32, 122, 1) 0%, rgba(109, 66, 166, 1) 100%);
+                        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+                    }
+                
+                    // ----------------------------- Forme hexagonale intérieur des projets
+                    .forme_projet {
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        right: 5px;
+                        bottom: 5px;
+                        background: $couleur_noir;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+                        transition-timing-function: ease-in-out;
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center; 
+                    }
+
+                    .forme_projet {
+                        top: 4px;
+                        left: 4px;
+                        right: 4px;
+                        bottom: 4px; 
+                    }
+
+                    .forme:hover {
+                        top: 10px;
+                        left: 10px;
+                        right: 10px;
+                        bottom: 10px;
+                    }
+   
+                    .conteneur_projet:first-of-type {
+                        position: absolute;
+                        top: 4rem;
+                        left: 24rem;
+                    }
+                    
+                    .conteneur_projet:nth-of-type(2) {
+                        position: absolute;
+                        top: -3.5rem;
+                        left: 36.5rem;  
+                    }
+                    
+                    .conteneur_projet:nth-of-type(3) {
+                        position: absolute;
+                        top: 4rem;
+                        left: 49rem;  
                     }
                 }
             }

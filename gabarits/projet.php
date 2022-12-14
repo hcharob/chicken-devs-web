@@ -2,7 +2,7 @@
     <div class="contour">
         <div class="forme" >
             <div class="overlay">
-                <p class="projet__titre"> <?= get_the_title() ?></p>
+                <p class="titre__projet__etudiant"> <?= get_the_title() ?></p>
                 
             </div> 
             <?= get_the_content() ?>
