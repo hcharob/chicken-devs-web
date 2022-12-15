@@ -1886,8 +1886,8 @@ body .logo_tim {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-@media (min-width: 414px) {
-  .section1 .titre {
+@media (min-width: 1024px) {
+  .section2 .titre {
     font-size: clamp(2.5rem, 2.5vw, 3rem);
   }
 }

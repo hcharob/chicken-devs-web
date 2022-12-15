@@ -128,8 +128,8 @@
     }
 }
 
-@media (min-width:$largeur__media--tablette){
-    .section1{
+@media (min-width:$largeur__media--desktop){
+    .section2{
         .titre{
             font-size: clamp(2.5rem, 2.5vw, 3rem);
         }
