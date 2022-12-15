@@ -1,4 +1,4 @@
- <footer class="site__footer">
+<footer class="site__footer">
      <div class="site__footer__conteneur">
          <div class="footer__titre"><?php get_sidebar("pied_page_colonne_1")?></div>
 
