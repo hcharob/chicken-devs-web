@@ -490,7 +490,7 @@ COMPOSANTES
 
 .site__footer .site__footer__conteneur {
   display: grid;
-  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
+  grid-template-areas: 'titre' 'contact' 'social' 'copyright';
   padding: 1rem;
   gap: 1.5rem;
   font-family: montserrat, sans-serif;
@@ -1432,7 +1432,6 @@ body .logo_tim {
 
 .site__main__acceuil .pages__sections {
   position: relative;
-  top: -75px;
   width: 70vw;
   background-color: rgba(50, 53, 59, 0.75);
   display: flex;
@@ -1445,6 +1444,12 @@ body .logo_tim {
   width: 100%;
   background-color: #32353b;
   box-shadow: 0px 2px 10px black;
+}
+
+@media (min-width: 1024px) {
+  .pages__sections {
+    top: -75px;
+  }
 }
 
 .section1 {
@@ -1480,17 +1485,16 @@ body .logo_tim {
   position: relative;
   top: 10%;
   left: 5%;
-  width: 50%;
   height: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   filter: drop-shadow(black 2px 2px 10px);
+  z-index: 2;
 }
 
 .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
-  font-size: clamp(2.5rem, 2.5vw, 3rem);
   font-family: bebas-neue-pro, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
@@ -1510,6 +1514,7 @@ body .logo_tim {
   height: 100%;
   width: 100%;
   display: flex;
+  left: -150%;
 }
 
 .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 .conteneur_projet {
@@ -1577,6 +1582,24 @@ body .logo_tim {
   left: 49rem;
 }
 
+@media (min-width: 414px) {
+  .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 {
+    left: -50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section1 .box__titre {
+    width: 50%;
+  }
+  .section1 .titre {
+    font-size: clamp(2.5rem, 2.5vw, 3rem);
+  }
+  .section1 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .GridHex1 {
+    left: -25%;
+  }
+}
+
 .section2 {
   z-index: 3;
 }
@@ -1611,7 +1634,6 @@ body .logo_tim {
   position: relative;
   top: 10%;
   padding-top: 2vh;
-  width: 50%;
   height: 30%;
   display: flex;
   flex-direction: column;
@@ -1621,7 +1643,6 @@ body .logo_tim {
 }
 
 .section2 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
-  font-size: clamp(2.5rem, 2.5vw, 3rem);
   font-family: bebas-neue-pro, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
@@ -1732,6 +1753,15 @@ body .logo_tim {
   transform: rotate(-24deg);
 }
 
+@media (min-width: 1024px) {
+  .section2 .box__titre {
+    width: 50%;
+  }
+  .section2 .titre {
+    font-size: clamp(2.5rem, 2.5vw, 3rem);
+  }
+}
+
 .section3 {
   position: relative;
   z-index: 2;
@@ -1775,7 +1805,6 @@ body .logo_tim {
 }
 
 .section3 .hoverPannel__conteneur .hoverPannel__contour .hoverPannel__contain .box__titre .titre {
-  font-size: clamp(2.5rem, 2.5vw, 3rem);
   font-family: bebas-neue-pro, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
@@ -1857,6 +1886,12 @@ body .logo_tim {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+@media (min-width: 414px) {
+  .section1 .titre {
+    font-size: clamp(2.5rem, 2.5vw, 3rem);
+  }
+}
+
 .showcase {
   position: relative;
   width: 100vw;
@@ -1911,19 +1946,16 @@ body .logo_tim {
   z-index: 20;
   position: relative;
   top: 15%;
-  left: -2%;
 }
 
 .button_wrap .Long_Button {
-  margin-left: 14%;
+  margin: 0 10%;
   background-color: #A663FF;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
-  display: inline-block;
   border: none;
-  width: 20%;
-  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0% 100%, 0 50%);
   padding: 1em 2em;
   transition: clip-path 0.2s;
   font-size: clamp(0.75rem, 1.2rem, 4rem);
@@ -1934,7 +1966,18 @@ body .logo_tim {
 }
 
 .button_wrap .Long_Button:hover {
-  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 10% 50%);
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0% 100%, 0 50%);
+}
+
+@media (min-width: 1024px) {
+  .button_wrap {
+    left: -2%;
+  }
+  .Long_Button {
+    margin-left: 14%;
+    width: 30%;
+    display: inline-block;
+  }
 }
 
 /* ---------------------------------------------------------

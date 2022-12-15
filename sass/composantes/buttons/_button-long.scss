@@ -3,19 +3,16 @@
     z-index: 20;
     position: relative;
     top: 15%;
-    left: -2%;
    
     
     .Long_Button{
-        margin-left: 14%;
+        margin: 0 10%;
         background-color: #A663FF;
         text-decoration: none;
         cursor: pointer;
         text-align: center;
-        display: inline-block;
         border: none;
-        width: 20%;
-        clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0% 100%, 0 50%);
         padding: 1em 2em;
         transition: clip-path 0.2s;
        
@@ -27,7 +24,19 @@
     }
       
     .Long_Button:hover{
-        clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 10% 50%)
+        clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0% 100%, 0 50%)
     }
     
+}
+
+@media (min-width:$largeur__media--desktop){
+    .button_wrap{
+        left: -2%;
+    }
+    .Long_Button{
+        margin-left: 14%;
+        width: 30%;
+        display: inline-block;
+        
+    }
 }
