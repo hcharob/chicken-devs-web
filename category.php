@@ -4,12 +4,16 @@ $category = get_category( get_query_var( 'cat' ) );
     $cat_ID = $category->cat_ID;
     $cat_count = $category->category_count;
     $cat_name = get_cat_name( $cat_ID ); 
-    echo $cat_name;
+    echo (".");
  ?>
 
 <main class="site__main">
     <section class="formation">
-        <h2 class="formation__titre">Liste des cours du programme TIM</h2>
+        <div class="gradient__conteneur">
+            <div class="conteneur__titre">
+                <h2 class="formation__titre">LISTE DES COURS DU PROGRAMME TIM</h2>
+            </div>
+        </div>
         
         <?php wp_nav_menu(array(
             "menu" => "categorie_cours",
@@ -17,6 +21,16 @@ $category = get_category( get_query_var( 'cat' ) );
         )) ?>
         
         <div class="formation__conteneur" style="--n: <?php echo $cat_count ?>">
+        <div class="dropdown">
+                <button class="dropbtn"><?= $cat_name ?></button>
+                <div class="dropdown-content">
+                    <?php wp_nav_menu(array(
+                        "menu" => "categorie_cours",
+                        "container_class" => "listeSessionDropdown"
+                    )) ?>
+                </div>
+            </div>
+           
             <div id="myDIV" class="formation__liste">
                     <?php 
                         $args = array(

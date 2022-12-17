@@ -1,18 +1,53 @@
-a{
-    color: $couleur_blanc;
+.site__main{
+    padding-top: 5rem;
+    padding-bottom: 10rem;
 }
 
 .formation{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2rem;
+    a, h3, .cours__sigle{
+        font-family: $police_titre;
+        letter-spacing: 0.1em;
+    } 
 }
+.gradient__conteneur{
+    
+    width: 62vw;
+    background: linear-gradient(135deg, $couleur_rosePrimaire 0%, $couleur_mauvePrimaire 100%);
+   
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    .conteneur__titre{ //Listes des cours du prog...
+        display: flex;
+        margin: auto;
+        text-align: center;
+        padding: 1vw;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        width: 60vw;
+        color: $couleur_blanc;
+        background-color: $couleur_noir;
+        font-size: unquote("clamp(1.25rem, 0.5556rem + 2.2222vw, 2.5rem)");
+        font-family: $police_titre;
+    }
+}
+   
 
-.formation__conteneur {
+.formation__conteneur {//Conteneur du conteneur,stupide mais necessaire
+    
     display: flex; 
+    flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    --s: 15vw;  /* size */
+    margin-top: 1rem;
+    --s:35vw;  /* size */
     --r: 1.15; /* height ratio */
     /* clip-path parameter */
     --hc: calc(var(--s) * 0.5); 
@@ -20,17 +55,17 @@ a{
     --m: 3px; /* vertical margin */
     --mh: calc(var(--m) + (var(--s) - 2*var(--hc))/2); /* horizontal margin */
     --f: calc(2.2*var(--s));
-    background-color: $couleur_noir;
-    width: 50vw;
+    background-color: #222426a1;
+    width: 70vw;
     padding-bottom: 5rem;
 }
 
+
+
 .formation__liste { /*le conteneur des hexagones*/
-    font-size: 0; /* enleve un bout blanc */
     // width: calc((var(--s) * 3) + (var(--s)/2 + var(--mh)));
     width:calc(((var(--n) / 2) + 0.5) * var(--s) + ((var(--n) + 1) * var(--mh)));
-    
-    
+    margin: 1rem;
 }
 
 .formation__liste article { /* les hexagones */
@@ -48,17 +83,8 @@ a{
         0 calc(100% - var(--vc)),0 var(--vc) /* 2 points at the left */
     );
     margin-bottom: calc(var(--m) - var(--vc)); /* 0.2886 = le height divisé par 4, nous voulons la marge - le quart du height donc var(--s) * (1.1547 / 4) */
-    background: pink;
-    position: relative;
-
-    .conteneurCours{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        text-align: center;
-    }   
+    
+    position: relative;   
 }
 
 .formation__liste::before {
@@ -69,8 +95,72 @@ a{
     shape-outside: repeating-linear-gradient(#000 0 10px,#0000 0 var(--f));
 }
 
+.conteneurCours{ //Tout ce qui est dans les hexagones
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 98%;
+    text-align: center;
+    width: 98%;
+    
+    
+    h3{
+        font-size: unquote("clamp(1rem, 0.1389rem + 1.5556vw, 1.5rem)");
+        color:$couleur_blanc
+        
+    }
+    .cours__sigle{
+        
+        margin: 0;
+        color: $couleur_blanc;
+    }
+    background-color: $couleur_noir;
+    clip-path: polygon(
+        var(--hc) 0, calc(100% - var(--hc)) 0, /* 2 points at the top */
+        100% var(--vc),100% calc(100% - var(--vc)), /* 2 points at the right */
+        calc(100% - var(--hc)) 100%, var(--hc) 100%, /* 2 points at the bottom */
+        0 calc(100% - var(--vc)),0 var(--vc) /* 2 points at the left */
+    );
+}
 
 
 
+.conteneurContour{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(135deg, $couleur_rosePrimaire 0%, $couleur_mauvePrimaire 100%);
+}
 
+@media (min-width:$largeur__media--tablette){
+    .conteneurCours{ //Tout ce qui est dans les hexagones
+        h3{
+            font-size: unquote("clamp(0.8rem, 0.0308rem + 3.0769vw, 2rem)");
+        }
+        .cours__sigle{
+            font-size: unquote("clamp(0.8rem, -0.0144rem + 3.1475vw, 2rem)");
+        }
+    }
+}
 
+@media (min-width:$largeur__media--desktop){
+    .formation__conteneur{
+        --s: 15vw;
+    }
+
+    .conteneurCours{ //Tout ce qui est dans les hexagones
+        h3{
+            font-size: unquote("clamp(1.3rem, 0.7553rem + 0.8511vw, 1.5rem);");
+            
+        }
+        .cours__sigle{
+            font-size: unquote("clamp(1rem, 0.1389rem + 1.5556vw, 1.5rem)");
+        }
+    }
+}
