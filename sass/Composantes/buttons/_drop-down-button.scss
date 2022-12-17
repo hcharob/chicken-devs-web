@@ -1,44 +1,72 @@
 .dropdown{
-    position:absolute;
-    flex-basis: 100%
+  position:absolute;
+  flex-basis: 100%;
 }
 .dropbtn {
-    background-color: #ffffff00;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    font-family: $police_texte;
-    border: none;
-    cursor: pointer;
+  background-color: #ffffff00;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  font-family: $police_titre;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: $couleur_noir;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1;
+  ul{
+    padding:0;
+    text-align: center;
   }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
+  li{
+    list-style-type: none;
   }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content  a {
-    color: black;
+  a {
     padding: 12px 16px;
+    color: $couleur_blanc;
     text-decoration: none;
     display: block;
+    &:hover{
+      color: $couleur_noir;
+    }
   }
+}
+
+
+
+.dropdown-content a:hover { background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+@media (min-width:$largeur__media--tablette){
+
+}
+
+@media (min-width:$largeur__media--desktop){
+.dropdown:hover .dropdown-content {
+  display: none;
+}
+.dropdown:hover .dropbtn {
+  background-color: rgba(0, 0, 0, 0);
   
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }
+}
+.dropbtn {
+  cursor: auto;
+}
+}

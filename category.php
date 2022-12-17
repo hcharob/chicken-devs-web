@@ -4,7 +4,7 @@ $category = get_category( get_query_var( 'cat' ) );
     $cat_ID = $category->cat_ID;
     $cat_count = $category->category_count;
     $cat_name = get_cat_name( $cat_ID ); 
-    echo $cat_name;
+    echo (".");
  ?>
 
 <main class="site__main">
