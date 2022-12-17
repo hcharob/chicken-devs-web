@@ -1,4 +1,4 @@
-        <section class="pages__sections__section section2">
+        <section class="pages__sections__section section1">
             <div class="hoverPannel__conteneur">   
                 <div class="hoverPannel__contour">
                     <div class="hoverPannel__contain">
@@ -14,7 +14,6 @@
                                             stroke: #a663ff;
                                             stroke-miterlimit: 10;
                                             stroke-width: 2px;
-                                            color: #FF207A;
                                         }
                                     </style>
                                 </defs>
@@ -28,6 +27,26 @@
                                 <?php echo get_field('section_button_text') ?>
                             </div>
                         </a>
+                        <div class="GridHex1">
+                            <div class="conteneur_projet">
+                                <div class="contour_projet">
+                                    <div class="forme_projet">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="conteneur_projet">
+                                <div class="contour_projet">
+                                    <div class="forme_projet">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="conteneur_projet">
+                                <div class="contour_projet">
+                                    <div class="forme_projet">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

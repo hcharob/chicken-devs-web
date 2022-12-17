@@ -4,7 +4,6 @@
     align-items: center;
         .pages__sections{
             position: relative;
-            top: -75px;
             width: 70vw;
             background-color: rgba(50, 53, 59, 0.75);
 
@@ -19,3 +18,10 @@
             }
         }
 }
+
+@media (min-width:$largeur__media--desktop){
+    .pages__sections{
+        top: -75px;
+    }
+}
+

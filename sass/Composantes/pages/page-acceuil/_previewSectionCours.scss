@@ -39,7 +39,7 @@
                     filter: drop-shadow(black 2px 2px 10px);
 
                     .titre{
-                        font-size: clamp(2.5rem, 2.5vw, 3rem);
+                        
                         font-family: $police_titre;
                         text-transform: uppercase;
                         letter-spacing: 0.4rem;
@@ -124,6 +124,14 @@
             .hoverPannel__contour{
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             } 
+        }
+    }
+}
+
+@media (min-width:$largeur__media--desktop){
+    .section2{
+        .titre{
+            font-size: clamp(2.5rem, 2.5vw, 3rem);
         }
     }
 }

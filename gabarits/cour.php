@@ -11,13 +11,14 @@
         $sigleCours = substr($titre, 0, 3);
         $descCours = get_the_content();
     ?>
-    <div class="conteneurContour">
-        <div class="conteneurCours">
-            <h3 class="cours__titre">
-                    <?= $titreFiltreCours; ?>
-            </h3>
-            <p class="cours__sigle"><?= $sigleCours; ?> </p>
-            <code class="cours__desc"><?=$descCours?><?php get_permalink(); ?></code>
-        </div>
+<div class="conteneurContour">
+    <div class="conteneurCours">
+        <h3 class="cours__titre">
+                <?= $titreFiltreCours; ?>
+        </h3>
+        <p class="cours__sigle"><?= $sigleCours; ?> </p>
+        <!-- <p class="cours__desc"><?=wp_trim_words($descCours, 12, " <button class='cours__desc__bouton'>...</button>"); ?></p>
+        <?php get_permalink(); ?> -->
     </div>
+</div>
 </article>
