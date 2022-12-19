@@ -25,7 +25,7 @@
             <div class="profs_canvas">
 
                 <div class="profs_case">
-                    <img class="profs_image" src="https://m.media-amazon.com/images/M/MV5BMTk4Mjk3NTAzOF5BMl5BanBnXkFtZTgwMDAwOTA4MDI@._V1_SX600_.jpg" alt="Ahmed">
+                    <img class="profs_image" src="images/profs/ahm3.webp" alt="Ahmed">
                     <div class="profs_info">
                         <h1 class="profs_info_nom">Ahmed Boudjani</h1>
                         <!-- <p class="profs_info_desc">La description</p> -->
